@@ -47,4 +47,6 @@ npm install
 npm run build
 ```
 
+> 如果苹果 M 芯片提示 x86 不兼容，进入 node-pty 目录，执行 npm rebuild 即可。
+
 再次启动 Cocos Creator，就可以了。
