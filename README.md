@@ -40,7 +40,7 @@ $ npm create cocos-plugin@latest
 
 本插件需要依赖系统的 NodeJS 版本，如果使用了 fnm、nvm 等管理工具，请先使用 `fnm use system` 或者 `nvm use system` 切换到系统的 NodeJS。
 
-执行下面的命令
+2. 执行下面的命令
 
 ```bash
 npm install
@@ -49,4 +49,4 @@ npm run build
 
 > 如果苹果 M 芯片提示 x86 不兼容，进入 node-pty 目录，执行 npm rebuild 即可。
 
-再次启动 Cocos Creator，就可以了。
+3. 再次启动 Cocos Creator，就可以了。
