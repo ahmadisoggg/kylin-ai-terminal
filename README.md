@@ -8,6 +8,8 @@
 - 支持多标签窗口，方便让智能体和 Shell 同时工作
 - 本插件 100% 由 Cursor 生成
 
+> 支持 Cocos Creator 3.8.0+
+
 ## 技术栈
 
 本插件使用最新的 create-cocos-pulgin 进行构建。
