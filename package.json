@@ -1,0 +1,62 @@
+{
+    "name": "kylin-ai-terminal",
+    "version": "0.0.0",
+    "package_version": 2,
+    "type": "module",
+    "main": "./dist/main.cjs",
+      "scripts": {
+    "build": "vue-tsc -b && vite build"
+  },
+    "dependencies": {
+        "@xterm/addon-fit": "^0.10.0",
+        "element-plus": "^2.8.6",
+        "node-pty": "^1.0.0",
+        "vue": "^3.4.37",
+        "wetty": "^2.7.0",
+        "xterm": "^5.3.0",
+        "xterm-addon-fit": "^0.8.0"
+    },
+    "devDependencies": {
+        "@cocos-fe/vite-plugin-cocos-panel": "^1.0.2",
+        "@cocos/creator-types": "^3.8.6",
+        "@types/node": "^22.15.21",
+        "@vitejs/plugin-vue": "^5.2.2",
+        "@vue/tsconfig": "^0.7.0",
+        "rollup-plugin-node-externals": "^7.1.3",
+        "typescript": "^5.8.2",
+        "unplugin-auto-import": "^0.18.6",
+        "unplugin-vue-components": "^0.27.5",
+        "vite": "^5.4.1",
+        "vue-tsc": "^2.1.10"
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "i18n:menu.panel/kylin-ai-terminal",
+                "label": "i18n:kylin-ai-terminal.title",
+                "message": "open-terminal-panel"
+            }
+        ],
+        "messages": {
+            "open-terminal-panel": {
+                "methods": [
+                    "open-terminal-panel"
+                ]
+            }
+        }
+    },
+    "panels": {
+        "default": {
+            "title": "kylin-ai-terminal",
+            "type": "docked",
+            "main": "./dist/panel.cjs",
+            "icon": "./static/icon.png",
+            "size": {
+                "min-width": 400,
+                "min-height": 300,
+                "width": 1024,
+                "height": 600
+            }
+        }
+    }
+}
