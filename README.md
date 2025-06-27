@@ -1,5 +1,5 @@
 # AI Terminal For Cocos Creator
-![](screenshot.png)
+![](screenshot.jpg)
 
 ## 特色
 
@@ -11,6 +11,14 @@
 ## 技术栈
 
 本插件使用最新的 create-cocos-pulgin 进行构建。
+
+地址：https://www.npmjs.com/package/create-cocos-plugin
+
+定位到目标目录，执行下面的命令，根据提示操作即可生成项目模板
+
+```
+$ npm create cocos-plugin@latest
+```
 
 基于纯 Web 前端技术栈，使得 AI 可以全自动实现想要的功能， 本插件 100% 由 AI 生成，充分证明了全新一代 Cocos 插件开发脚手架的惊人效率。
 
