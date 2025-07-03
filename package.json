@@ -32,7 +32,7 @@
     "contributions": {
         "menu": [
             {
-                "path": "i18n:menu.panel/kylin-ai-terminal",
+                "path": "i18n:menu.panel",
                 "label": "i18n:kylin-ai-terminal.title",
                 "message": "open-terminal-panel"
             }
@@ -47,7 +47,7 @@
     },
     "panels": {
         "default": {
-            "title": "kylin-ai-terminal",
+            "title": "kylin-ccc-terminal",
             "type": "docked",
             "main": "./dist/panel.cjs",
             "icon": "./static/icon.png",
