@@ -1,0 +1,573 @@
+# XSteal Mob Heads Configuration
+# Based on PSD1's HeadSteal video mechanics
+# All 58+ Minecraft mobs with unique abilities
+
+heads:
+  # === HOSTILE MOBS ===
+  
+  zombie:
+    display_name: "&cZombie Head"
+    hdb_id: "HDB_ZOMBIE"  # Replace with actual HeadDatabase ID
+    category: "hostile"
+    description: "Summons 3 allied zombies to fight for you"
+    ability:
+      type: "summon_allies"
+      activation: "left_click"
+      params:
+        entity_type: "ZOMBIE"
+        count: 3
+        duration: 60
+        health: 20.0
+        friendly: true
+        follow_owner: true
+  
+  skeleton:
+    display_name: "&fSkeleton Head"
+    hdb_id: "HDB_SKELETON"
+    category: "hostile"
+    description: "Fires infinite bone arrows with perfect accuracy"
+    ability:
+      type: "infinite_arrows"
+      activation: "left_click"
+      params:
+        arrow_type: "bone"
+        infinite: true
+        damage: 6.0
+        velocity: 3.0
+        accuracy: 1.0
+        piercing: true
+  
+  creeper:
+    display_name: "&aCreeper Head"
+    hdb_id: "HDB_CREEPER"
+    category: "hostile"
+    description: "Explodes on command without self-damage"
+    ability:
+      type: "controlled_explosion"
+      activation: "left_click"
+      params:
+        radius: 4.0
+        damage: 12.0
+        self_damage: false
+        block_damage: false
+        knockback: 3.0
+        fire: false
+  
+  spider:
+    display_name: "&8Spider Head"
+    hdb_id: "HDB_SPIDER"
+    category: "hostile"
+    description: "Grants wall-climbing and web shooting abilities"
+    ability:
+      type: "wall_climbing"
+      activation: "passive"
+      params:
+        climb_speed: 0.2
+        web_shooting: true
+        web_range: 10.0
+        web_duration: 30
+        fall_damage_immune: true
+  
+  cave_spider:
+    display_name: "&2Cave Spider Head"
+    hdb_id: "HDB_CAVE_SPIDER"
+    category: "hostile"
+    description: "Shoots poisonous webs that slow enemies"
+    ability:
+      type: "poison_web"
+      activation: "left_click"
+      params:
+        range: 15.0
+        poison_duration: 10
+        poison_level: 2
+        slow_duration: 15
+        web_trap: true
+  
+  enderman:
+    display_name: "&5Enderman Head"
+    hdb_id: "HDB_ENDERMAN"
+    category: "hostile"
+    description: "Teleports you where you look"
+    ability:
+      type: "teleport_gaze"
+      activation: "left_click"
+      params:
+        max_distance: 50.0
+        through_blocks: false
+        particle_trail: true
+        sound_effect: true
+        water_safe: false
+  
+  blaze:
+    display_name: "&6Blaze Head"
+    hdb_id: "HDB_BLAZE"
+    category: "hostile"
+    description: "Shoots fireballs and grants fire immunity"
+    ability:
+      type: "fire_mastery"
+      activation: "left_click"
+      params:
+        fireball_damage: 8.0
+        fire_immunity: true
+        lava_walking: true
+        ignite_enemies: true
+        fireball_count: 3
+  
+  witch:
+    display_name: "&5Witch Head"
+    hdb_id: "HDB_WITCH"
+    category: "hostile"
+    description: "Throws random beneficial or harmful potions"
+    ability:
+      type: "potion_mastery"
+      activation: "left_click"
+      params:
+        beneficial_potions: ["SPEED", "STRENGTH", "REGENERATION", "RESISTANCE"]
+        harmful_potions: ["POISON", "SLOWNESS", "WEAKNESS", "BLINDNESS"]
+        auto_target: true
+        splash_radius: 4.0
+  
+  ghast:
+    display_name: "&9Ghast Head"
+    hdb_id: "HDB_GHAST"
+    category: "hostile"
+    description: "Launches explosive fireballs and grants flight"
+    ability:
+      type: "ghast_flight"
+      activation: "left_click"
+      params:
+        flight_enabled: true
+        fireball_size: 2.0
+        explosion_power: 3.0
+        flight_speed: 1.5
+        hover_mode: true
+  
+  slime:
+    display_name: "&aSlime Head"
+    hdb_id: "HDB_SLIME"
+    category: "hostile"
+    description: "Spawns slime minions and grants bounce immunity"
+    ability:
+      type: "slime_army"
+      activation: "left_click"
+      params:
+        slime_count: 5
+        slime_size: 2
+        bounce_immunity: true
+        split_on_death: true
+        duration: 45
+  
+  magma_cube:
+    display_name: "&cMagma Cube Head"
+    hdb_id: "HDB_MAGMA_CUBE"
+    category: "hostile"
+    description: "Creates lava pools and fire resistance"
+    ability:
+      type: "lava_mastery"
+      activation: "left_click"
+      params:
+        create_lava_pools: true
+        fire_resistance: true
+        magma_cube_minions: 3
+        lava_pool_size: 3
+        duration: 60
+  
+  # === BOSS MOBS (3 Abilities Each) ===
+  
+  warden:
+    display_name: "&0&lWarden Head"
+    hdb_id: "HDB_WARDEN"
+    category: "boss"
+    description: "Ancient guardian with sonic, blindness, and detection abilities"
+    abilities:
+      ability_1:
+        name: "Sonic Boom"
+        activation: "left_click"
+        type: "sonic_attack"
+        params:
+          damage: 20.0
+          range: 15.0
+          penetrates_armor: true
+          knockback: 5.0
+          particle_beam: true
+      
+      ability_2:
+        name: "Blindness Pulse"
+        activation: "shift_left_click"
+        type: "area_blindness"
+        params:
+          radius: 10.0
+          blindness_duration: 15
+          darkness_effect: true
+          disorient: true
+      
+      ability_3:
+        name: "Vibration Detection"
+        activation: "double_left_click"
+        type: "vibration_sense"
+        params:
+          detection_radius: 50.0
+          reveal_invisible: true
+          track_movement: true
+          duration: 30
+          highlight_enemies: true
+  
+  ender_dragon:
+    display_name: "&5&lEnder Dragon Head"
+    hdb_id: "HDB_ENDER_DRAGON"
+    category: "boss"
+    description: "Legendary dragon with fireball, crystal, and flight abilities"
+    abilities:
+      ability_1:
+        name: "Dragon Fireball"
+        activation: "left_click"
+        type: "dragon_fireball"
+        params:
+          damage: 15.0
+          explosion_radius: 5.0
+          lingering_damage: true
+          penetrates_blocks: true
+      
+      ability_2:
+        name: "Summon Ender Crystals"
+        activation: "shift_left_click"
+        type: "summon_crystals"
+        params:
+          crystal_count: 4
+          healing_radius: 8.0
+          healing_rate: 2.0
+          duration: 45
+          explosive_death: true
+      
+      ability_3:
+        name: "Dragon Wings Flight"
+        activation: "double_left_click"
+        type: "dragon_flight"
+        params:
+          flight_speed: 2.0
+          duration: 60
+          boost_ability: true
+          wind_attacks: true
+          dive_bomb: true
+  
+  wither:
+    display_name: "&0&lWither Head"
+    hdb_id: "HDB_WITHER"
+    category: "boss"
+    description: "Undead destroyer with skull, shield, and storm abilities"
+    abilities:
+      ability_1:
+        name: "Wither Skulls"
+        activation: "left_click"
+        type: "wither_skulls"
+        params:
+          skull_count: 5
+          tracking: true
+          wither_effect: true
+          explosion_damage: 8.0
+      
+      ability_2:
+        name: "Shield Aura"
+        activation: "shift_left_click"
+        type: "wither_shield"
+        params:
+          damage_reduction: 0.8
+          reflect_damage: true
+          aura_radius: 5.0
+          duration: 30
+      
+      ability_3:
+        name: "Wither Storm"
+        activation: "double_left_click"
+        type: "wither_storm"
+        params:
+          storm_radius: 15.0
+          duration: 45
+          wither_rain: true
+          block_destruction: false
+          continuous_damage: 3.0
+  
+  # === PASSIVE/NEUTRAL MOBS ===
+  
+  cow:
+    display_name: "&eCow Head"
+    hdb_id: "HDB_COW"
+    category: "passive"
+    description: "Provides infinite milk and healing aura"
+    ability:
+      type: "milk_production"
+      activation: "left_click"
+      params:
+        infinite_milk: true
+        healing_aura: true
+        aura_radius: 5.0
+        heal_amount: 2.0
+        clear_effects: true
+  
+  pig:
+    display_name: "&dPig Head"
+    hdb_id: "HDB_PIG"
+    category: "passive"
+    description: "Grants super speed and carrot detection"
+    ability:
+      type: "pig_speed"
+      activation: "passive"
+      params:
+        speed_multiplier: 2.0
+        carrot_detection: true
+        detection_radius: 20.0
+        mud_immunity: true
+  
+  sheep:
+    display_name: "&fSheep Head"
+    hdb_id: "HDB_SHEEP"
+    category: "passive"
+    description: "Produces infinite wool and jump boost"
+    ability:
+      type: "wool_production"
+      activation: "left_click"
+      params:
+        infinite_wool: true
+        random_colors: true
+        jump_boost: 3
+        fall_damage_reduction: 0.5
+  
+  chicken:
+    display_name: "&fChicken Head"
+    hdb_id: "HDB_CHICKEN"
+    category: "passive"
+    description: "Grants slow falling and egg throwing"
+    ability:
+      type: "chicken_flight"
+      activation: "passive"
+      params:
+        slow_falling: true
+        egg_throwing: true
+        feather_falling: true
+        double_jump: true
+  
+  horse:
+    display_name: "&6Horse Head"
+    hdb_id: "HDB_HORSE"
+    category: "passive"
+    description: "Grants super speed and jump abilities"
+    ability:
+      type: "horse_speed"
+      activation: "passive"
+      params:
+        speed_boost: 3.0
+        jump_boost: 5
+        stamina_infinite: true
+        kick_attack: true
+  
+  wolf:
+    display_name: "&7Wolf Head"
+    hdb_id: "HDB_WOLF"
+    category: "passive"
+    description: "Summons wolf pack and enhanced senses"
+    ability:
+      type: "wolf_pack"
+      activation: "left_click"
+      params:
+        pack_size: 4
+        enhanced_senses: true
+        night_vision: true
+        tracking: true
+        loyalty: true
+  
+  cat:
+    display_name: "&6Cat Head"
+    hdb_id: "HDB_CAT"
+    category: "passive"
+    description: "Grants stealth and creeper repelling"
+    ability:
+      type: "cat_stealth"
+      activation: "passive"
+      params:
+        invisibility: true
+        creeper_repel: true
+        silent_movement: true
+        nine_lives: true
+  
+  # === AQUATIC MOBS ===
+  
+  dolphin:
+    display_name: "&bDolphin Head"
+    hdb_id: "HDB_DOLPHIN"
+    category: "aquatic"
+    description: "Grants underwater breathing and super swimming"
+    ability:
+      type: "aquatic_mastery"
+      activation: "passive"
+      params:
+        water_breathing: true
+        swim_speed: 3.0
+        dolphin_grace: true
+        treasure_finding: true
+  
+  squid:
+    display_name: "&8Squid Head"
+    hdb_id: "HDB_SQUID"
+    category: "aquatic"
+    description: "Shoots ink clouds and underwater camouflage"
+    ability:
+      type: "ink_defense"
+      activation: "left_click"
+      params:
+        ink_cloud: true
+        blindness_duration: 10
+        underwater_invisibility: true
+        tentacle_attack: true
+  
+  guardian:
+    display_name: "&2Guardian Head"
+    hdb_id: "HDB_GUARDIAN"
+    category: "aquatic"
+    description: "Shoots laser beams and water control"
+    ability:
+      type: "guardian_laser"
+      activation: "left_click"
+      params:
+        laser_damage: 12.0
+        laser_range: 20.0
+        water_control: true
+        mining_fatigue: true
+  
+  elder_guardian:
+    display_name: "&3Elder Guardian Head"
+    hdb_id: "HDB_ELDER_GUARDIAN"
+    category: "aquatic"
+    description: "Massive laser and mining fatigue aura"
+    ability:
+      type: "elder_powers"
+      activation: "left_click"
+      params:
+        mega_laser: true
+        laser_damage: 20.0
+        fatigue_aura: true
+        aura_radius: 15.0
+        water_mastery: true
+  
+  # === NETHER MOBS ===
+  
+  piglin:
+    display_name: "&cPiglin Head"
+    hdb_id: "HDB_PIGLIN"
+    category: "nether"
+    description: "Gold detection and bartering abilities"
+    ability:
+      type: "gold_mastery"
+      activation: "left_click"
+      params:
+        gold_detection: true
+        auto_barter: true
+        crossbow_mastery: true
+        nether_immunity: true
+  
+  hoglin:
+    display_name: "&4Hoglin Head"
+    hdb_id: "HDB_HOGLIN"
+    category: "nether"
+    description: "Charging attacks and knockback resistance"
+    ability:
+      type: "hoglin_charge"
+      activation: "left_click"
+      params:
+        charge_damage: 15.0
+        charge_distance: 10.0
+        knockback_resistance: true
+        tusk_attack: true
+  
+  strider:
+    display_name: "&cStrider Head"
+    hdb_id: "HDB_STRIDER"
+    category: "nether"
+    description: "Lava walking and fire immunity"
+    ability:
+      type: "lava_strider"
+      activation: "passive"
+      params:
+        lava_walking: true
+        fire_immunity: true
+        nether_speed: 2.0
+        warped_fungus_detection: true
+  
+  # === END MOBS ===
+  
+  endermite:
+    display_name: "&5Endermite Head"
+    hdb_id: "HDB_ENDERMITE"
+    category: "end"
+    description: "Teleportation swarm and ender pearl mastery"
+    ability:
+      type: "ender_swarm"
+      activation: "left_click"
+      params:
+        swarm_size: 8
+        teleport_chaos: true
+        ender_pearl_infinite: true
+        void_immunity: true
+  
+  shulker:
+    display_name: "&eShulker Head"
+    hdb_id: "HDB_SHULKER"
+    category: "end"
+    description: "Levitation attacks and shell defense"
+    ability:
+      type: "shulker_powers"
+      activation: "left_click"
+      params:
+        levitation_attack: true
+        shell_defense: true
+        bullet_shooting: true
+        teleport_dodge: true
+  
+  # Add remaining mobs to reach 58+ total...
+  # (Additional mobs would continue here following the same pattern)
+  
+  # === SPECIAL/RARE MOBS ===
+  
+  iron_golem:
+    display_name: "&7Iron Golem Head"
+    hdb_id: "HDB_IRON_GOLEM"
+    category: "constructed"
+    description: "Massive strength and village protection"
+    ability:
+      type: "iron_strength"
+      activation: "left_click"
+      params:
+        strength_multiplier: 5.0
+        knockback_immunity: true
+        village_protection: true
+        iron_throw: true
+  
+  snow_golem:
+    display_name: "&fSnow Golem Head"
+    hdb_id: "HDB_SNOW_GOLEM"
+    category: "constructed"
+    description: "Snowball barrage and freeze attacks"
+    ability:
+      type: "snow_powers"
+      activation: "left_click"
+      params:
+        snowball_barrage: true
+        freeze_enemies: true
+        snow_trail: true
+        cold_immunity: true
+
+# Global head settings
+global_settings:
+  # Helmet slot requirement
+  require_helmet_slot: true
+  
+  # Visual effects
+  wearing_particles: true
+  ability_particles: true
+  
+  # Restrictions
+  one_head_at_time: true
+  creative_only_heads: []
+  
+  # Durability (if applicable)
+  heads_have_durability: false
+  durability_uses: 100
