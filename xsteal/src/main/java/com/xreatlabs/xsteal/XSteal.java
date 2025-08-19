@@ -6,6 +6,10 @@ import com.xreatlabs.xsteal.commands.EnhancedXStealCommand;
 import com.xreatlabs.xsteal.heads.HeadManager;
 import com.xreatlabs.xsteal.systems.LifeManager;
 import com.xreatlabs.xsteal.systems.RecipeManager;
+import com.xreatlabs.xsteal.systems.ApocalypseHeadSystem;
+import com.xreatlabs.xsteal.systems.DarkAltarSystem;
+import com.xreatlabs.xsteal.systems.NotificationSystem;
+import com.xreatlabs.xsteal.systems.BossHeadSystem;
 import com.xreatlabs.xsteal.utils.AntiTamper;
 import com.xreatlabs.xsteal.utils.ConfigManager;
 import com.xreatlabs.xsteal.utils.LibbyManager;
@@ -48,6 +52,10 @@ public class XSteal extends JavaPlugin {
     private BanBoxManager banBoxManager;
     private LifeManager lifeManager;
     private RecipeManager recipeManager;
+    private ApocalypseHeadSystem apocalypseHeadSystem;
+    private DarkAltarSystem darkAltarSystem;
+    private NotificationSystem notificationSystem;
+    private BossHeadSystem bossHeadSystem;
     
     // Plugin state
     private final AtomicBoolean pluginReady = new AtomicBoolean(false);

@@ -1259,10 +1259,40 @@ heads:
         rare_plant_finding: true
         historical_wisdom: true
 
+  # === LEGENDARY FUSION HEAD ===
+  
+  apocalypse_head:
+    display_name: "&0&l🌀 APOCALYPSE HEAD"
+    hdb_id: "HDB_APOCALYPSE"  # Special fusion head texture
+    category: "legendary"
+    description: "Ultimate fusion of Dragon and Wither power"
+    fusion_recipe:
+      required_heads: ["ender_dragon", "wither"]
+      materials:
+        dragon_head: 1
+        wither_skeleton_skull: 1
+        nether_star: 3
+        obsidian: 4
+        end_crystal: 1
+      requires_dark_altar: true
+      requires_boss_kills: true
+    ability:
+      type: "black_hole"
+      activation: "left_click"
+      params:
+        radius: 15.0
+        duration: 5
+        pull_strength: 0.8
+        damage_per_tick: 2.0
+        void_damage: 5.0
+        launch_force: 2.0
+        particle_density: "high"
+        sound_effects: "apocalyptic"
+
 # === GLOBAL HEAD SETTINGS ===
 global_settings:
-  # Total heads configured
-  total_heads: 58
+  # Total heads configured (including fusion)
+  total_heads: 59
   
   # Helmet slot requirement
   require_helmet_slot: true
