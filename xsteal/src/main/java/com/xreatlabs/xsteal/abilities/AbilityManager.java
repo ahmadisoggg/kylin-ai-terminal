@@ -26,6 +26,7 @@ public class AbilityManager {
     private final Map<UUID, Set<Entity>> summonedEntities;
     private final Map<UUID, Long> lastAbilityUse;
     private final AtomicInteger activeAbilityCount;
+    private final HelmetSlotManager helmetSlotManager;
     
     // Boss combo tracking
     private final Map<UUID, BossComboTracker> bossComboTrackers;
@@ -37,6 +38,7 @@ public class AbilityManager {
         this.lastAbilityUse = new ConcurrentHashMap<>();
         this.activeAbilityCount = new AtomicInteger(0);
         this.bossComboTrackers = new ConcurrentHashMap<>();
+        this.helmetSlotManager = new HelmetSlotManager(plugin);
     }
     
     /**
@@ -96,6 +98,19 @@ public class AbilityManager {
         // Constructed abilities
         registerAbility("iron_strength", new IronStrengthAbility());
         registerAbility("snow_powers", new SnowPowersAbility());
+        
+        // Enhanced useful abilities
+        registerAbility("villager_trading_mastery", new VillagerTradingAbility());
+        registerAbility("bat_echolocation", new BatEcholocationAbility());
+        registerAbility("bee_pollination", new BeePollinationAbility());
+        registerAbility("allay_collection", new AllayCollectionAbility());
+        registerAbility("sniffer_archaeology", new SnifferArchaeologyAbility());
+        registerAbility("dolphin_navigation", new DolphinNavigationAbility());
+        registerAbility("goat_mountain_powers", new GoatMountainAbility());
+        registerAbility("iron_golem_construction", new IronGolemConstructionAbility());
+        
+        // Legendary abilities
+        registerAbility("black_hole", new BlackHoleAbility());
         
         plugin.getPluginLogger().info("Registered " + registeredAbilities.size() + " abilities");
     }
@@ -351,24 +366,21 @@ public class AbilityManager {
      * Check if player is wearing a head with abilities
      */
     public boolean isWearingAbilityHead(Player player) {
-        ItemStack helmet = player.getInventory().getHelmet();
-        if (helmet == null) return false;
-        
-        String headKey = plugin.getHeadManager().getHeadKey(helmet);
-        if (headKey == null) return false;
-        
-        HeadData headData = plugin.getHeadManager().getHeadData(headKey);
-        return headData != null && (headData.hasAbility() || headData.hasBossAbilities());
+        return helmetSlotManager.isWearingHead(player);
     }
     
     /**
      * Get the head key from player's helmet
      */
     public String getWornHeadKey(Player player) {
-        ItemStack helmet = player.getInventory().getHelmet();
-        if (helmet == null) return null;
-        
-        return plugin.getHeadManager().getHeadKey(helmet);
+        return helmetSlotManager.getCurrentlyWornHead(player);
+    }
+    
+    /**
+     * Get helmet slot manager
+     */
+    public HelmetSlotManager getHelmetSlotManager() {
+        return helmetSlotManager;
     }
     
     /**
@@ -434,6 +446,11 @@ public class AbilityManager {
                     entity.remove();
                 }
             }));
+        
+        // Cleanup helmet slot manager
+        if (helmetSlotManager != null) {
+            helmetSlotManager.cleanup();
+        }
         
         registeredAbilities.clear();
         summonedEntities.clear();
