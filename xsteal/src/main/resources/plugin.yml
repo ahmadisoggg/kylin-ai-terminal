@@ -39,6 +39,9 @@ permissions:
       xsteal.admin.banbox: true
       xsteal.admin.reload: true
       xsteal.admin.debug: true
+      xsteal.admin.life: true
+      xsteal.admin.cooldown: true
+      xsteal.admin.performance: true
   
   xsteal.admin.give:
     description: Give mob heads to players
@@ -88,4 +91,20 @@ permissions:
   
   xsteal.banbox.revive:
     description: Revive others from BanBox
+    default: true
+  
+  xsteal.admin.life:
+    description: Manage life points system
+    default: op
+  
+  xsteal.admin.cooldown:
+    description: Manage ability cooldowns
+    default: op
+  
+  xsteal.admin.performance:
+    description: Access performance monitoring
+    default: op
+  
+  xsteal.gui.use:
+    description: Use XSteal GUI interfaces
     default: true

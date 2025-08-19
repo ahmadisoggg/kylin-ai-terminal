@@ -2,8 +2,10 @@ package com.xreatlabs.xsteal;
 
 import com.xreatlabs.xsteal.abilities.AbilityManager;
 import com.xreatlabs.xsteal.banbox.BanBoxManager;
-import com.xreatlabs.xsteal.commands.XStealCommand;
+import com.xreatlabs.xsteal.commands.EnhancedXStealCommand;
 import com.xreatlabs.xsteal.heads.HeadManager;
+import com.xreatlabs.xsteal.systems.LifeManager;
+import com.xreatlabs.xsteal.systems.RecipeManager;
 import com.xreatlabs.xsteal.utils.AntiTamper;
 import com.xreatlabs.xsteal.utils.ConfigManager;
 import com.xreatlabs.xsteal.utils.LibbyManager;
@@ -44,6 +46,8 @@ public class XSteal extends JavaPlugin {
     private HeadManager headManager;
     private AbilityManager abilityManager;
     private BanBoxManager banBoxManager;
+    private LifeManager lifeManager;
+    private RecipeManager recipeManager;
     
     // Plugin state
     private final AtomicBoolean pluginReady = new AtomicBoolean(false);
@@ -154,6 +158,8 @@ public class XSteal extends JavaPlugin {
                     headManager = new HeadManager(XSteal.this, dependenciesLoaded);
                     abilityManager = new AbilityManager(XSteal.this);
                     banBoxManager = new BanBoxManager(XSteal.this);
+                    lifeManager = new LifeManager(XSteal.this);
+                    recipeManager = new RecipeManager(XSteal.this);
                     
                     logger.info("Loading head configurations...");
                     headManager.loadHeads();
@@ -200,6 +206,8 @@ public class XSteal extends JavaPlugin {
                     headManager = new HeadManager(XSteal.this, false);
                     abilityManager = new AbilityManager(XSteal.this);
                     banBoxManager = new BanBoxManager(XSteal.this);
+                    lifeManager = new LifeManager(XSteal.this);
+                    recipeManager = new RecipeManager(XSteal.this);
                     
                     // Load basic configurations
                     headManager.loadHeadsWithoutHDB();
@@ -251,11 +259,11 @@ public class XSteal extends JavaPlugin {
      * Register commands
      */
     private void registerCommands() {
-        XStealCommand commandHandler = new XStealCommand(this);
+        EnhancedXStealCommand commandHandler = new EnhancedXStealCommand(this);
         getCommand("xsteal").setExecutor(commandHandler);
         getCommand("xsteal").setTabCompleter(commandHandler);
         
-        logger.info("Commands registered");
+        logger.info("Enhanced commands registered");
     }
     
     /**
@@ -310,6 +318,10 @@ public class XSteal extends JavaPlugin {
             banBoxManager.saveData();
         }
         
+        if (lifeManager != null) {
+            lifeManager.saveData();
+        }
+        
         if (abilityManager != null) {
             abilityManager.cleanup();
         }
@@ -318,10 +330,16 @@ public class XSteal extends JavaPlugin {
             headManager.cleanup();
         }
         
+        if (recipeManager != null) {
+            recipeManager.cleanup();
+        }
+        
         // Clear managers
         headManager = null;
         abilityManager = null;
         banBoxManager = null;
+        lifeManager = null;
+        recipeManager = null;
         libbyManager = null;
         configManager = null;
         
@@ -349,6 +367,10 @@ public class XSteal extends JavaPlugin {
         
         if (banBoxManager != null) {
             banBoxManager.reload();
+        }
+        
+        if (lifeManager != null) {
+            lifeManager.saveData();
         }
         
         logger.info("XSteal reloaded successfully");
@@ -381,6 +403,14 @@ public class XSteal extends JavaPlugin {
     
     public BanBoxManager getBanBoxManager() {
         return banBoxManager;
+    }
+    
+    public LifeManager getLifeManager() {
+        return lifeManager;
+    }
+    
+    public RecipeManager getRecipeManager() {
+        return recipeManager;
     }
     
     public boolean isPluginReady() {
