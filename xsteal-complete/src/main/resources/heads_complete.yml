@@ -1,0 +1,1347 @@
+# XSteal Complete Mob Heads Configuration
+# ALL Minecraft mobs with PSD1-inspired abilities
+# Based on comprehensive analysis of all Minecraft entities
+
+heads:
+  # === HOSTILE MOBS (30+) ===
+  
+  zombie:
+    display_name: "&cZombie Head"
+    hdb_id: "HDB_ZOMBIE"
+    category: "hostile"
+    description: "Summons 3 allied zombies to fight for you"
+    ability:
+      type: "summon_zombie_army"
+      activation: "left_click"
+      params:
+        count: 3
+        duration: 60
+        health: 20.0
+        friendly: true
+        follow_owner: true
+        spawn_sound: "ENTITY_ZOMBIE_AMBIENT"
+
+  skeleton:
+    display_name: "&fSkeleton Head"
+    hdb_id: "HDB_SKELETON"
+    category: "hostile"
+    description: "Fires infinite bone arrows with perfect accuracy"
+    ability:
+      type: "infinite_bone_arrows"
+      activation: "left_click"
+      params:
+        infinite: true
+        damage: 8.0
+        velocity: 3.0
+        accuracy: 1.0
+        piercing: true
+        bone_effect: true
+
+  creeper:
+    display_name: "&aCreeper Head"
+    hdb_id: "HDB_CREEPER"
+    category: "hostile"
+    description: "Explodes on command without self-damage"
+    ability:
+      type: "controlled_explosion"
+      activation: "left_click"
+      params:
+        radius: 4.0
+        damage: 15.0
+        self_damage: false
+        block_damage: false
+        knockback: 3.0
+        creeper_hiss: true
+
+  spider:
+    display_name: "&8Spider Head"
+    hdb_id: "HDB_SPIDER"
+    category: "hostile"
+    description: "Grants wall-climbing and web shooting abilities"
+    ability:
+      type: "spider_powers"
+      activation: "passive"
+      params:
+        wall_climbing: true
+        web_shooting: true
+        climb_speed: 0.3
+        web_range: 15.0
+        fall_damage_immune: true
+        night_vision: true
+
+  cave_spider:
+    display_name: "&2Cave Spider Head"
+    hdb_id: "HDB_CAVE_SPIDER"
+    category: "hostile"
+    description: "Shoots poisonous webs and grants poison immunity"
+    ability:
+      type: "poison_spider_powers"
+      activation: "left_click"
+      params:
+        poison_web: true
+        poison_immunity: true
+        poison_attack: true
+        web_trap_duration: 20
+        poison_level: 2
+
+  enderman:
+    display_name: "&5Enderman Head"
+    hdb_id: "HDB_ENDERMAN"
+    category: "hostile"
+    description: "Teleports you where you look and grants ender abilities"
+    ability:
+      type: "ender_teleportation"
+      activation: "left_click"
+      params:
+        teleport_range: 64.0
+        through_blocks: false
+        water_damage: true
+        ender_pearl_immunity: true
+        block_pickup: true
+        night_vision: true
+
+  blaze:
+    display_name: "&6Blaze Head"
+    hdb_id: "HDB_BLAZE"
+    category: "hostile"
+    description: "Fire immunity and shoots fireballs"
+    ability:
+      type: "blaze_fire_mastery"
+      activation: "left_click"
+      params:
+        fire_immunity: true
+        lava_immunity: true
+        fireball_shooting: true
+        fireball_damage: 10.0
+        flight_boost: true
+        nether_speed: 2.0
+
+  witch:
+    display_name: "&5Witch Head"
+    hdb_id: "HDB_WITCH"
+    category: "hostile"
+    description: "Throws beneficial and harmful potions"
+    ability:
+      type: "potion_mastery"
+      activation: "left_click"
+      params:
+        random_potions: true
+        beneficial_potions: ["SPEED", "STRENGTH", "REGENERATION", "RESISTANCE"]
+        harmful_potions: ["POISON", "SLOWNESS", "WEAKNESS", "BLINDNESS"]
+        auto_target: true
+        splash_radius: 5.0
+        brewing_knowledge: true
+
+  ghast:
+    display_name: "&9Ghast Head"
+    hdb_id: "HDB_GHAST"
+    category: "hostile"
+    description: "Grants flight and shoots explosive fireballs"
+    ability:
+      type: "ghast_flight_powers"
+      activation: "left_click"
+      params:
+        flight_enabled: true
+        fireball_shooting: true
+        fireball_size: 3.0
+        explosion_power: 4.0
+        flight_speed: 1.8
+        nether_immunity: true
+
+  slime:
+    display_name: "&aSlime Head"
+    hdb_id: "HDB_SLIME"
+    category: "hostile"
+    description: "Spawns slime army and grants bounce abilities"
+    ability:
+      type: "slime_army_powers"
+      activation: "left_click"
+      params:
+        slime_count: 6
+        slime_sizes: [1, 2, 3]
+        bounce_immunity: true
+        split_on_death: true
+        duration: 45
+        jump_boost: 3
+
+  magma_cube:
+    display_name: "&cMagma Cube Head"
+    hdb_id: "HDB_MAGMA_CUBE"
+    category: "hostile"
+    description: "Creates lava pools and fire resistance"
+    ability:
+      type: "magma_powers"
+      activation: "left_click"
+      params:
+        lava_pools: true
+        fire_resistance: true
+        magma_minions: 4
+        lava_walking: true
+        burn_enemies: true
+        nether_speed: 1.5
+
+  silverfish:
+    display_name: "&7Silverfish Head"
+    hdb_id: "HDB_SILVERFISH"
+    category: "hostile"
+    description: "Spawns silverfish swarm and stone burrowing"
+    ability:
+      type: "silverfish_infestation"
+      activation: "left_click"
+      params:
+        swarm_count: 10
+        block_hiding: true
+        stone_burrowing: true
+        surprise_attacks: true
+        duration: 30
+
+  endermite:
+    display_name: "&5Endermite Head"
+    hdb_id: "HDB_ENDERMITE"
+    category: "hostile"
+    description: "Teleportation chaos and ender portal creation"
+    ability:
+      type: "endermite_chaos"
+      activation: "left_click"
+      params:
+        teleport_swarm: true
+        chaos_teleports: 8
+        ender_portal_creation: true
+        void_immunity: true
+        enderman_anger: true
+
+  guardian:
+    display_name: "&2Guardian Head"
+    hdb_id: "HDB_GUARDIAN"
+    category: "hostile"
+    description: "Shoots laser beams and controls water"
+    ability:
+      type: "guardian_laser_powers"
+      activation: "left_click"
+      params:
+        laser_beam: true
+        laser_damage: 15.0
+        laser_range: 25.0
+        water_breathing: true
+        underwater_speed: 2.0
+        mining_fatigue_attack: true
+
+  elder_guardian:
+    display_name: "&3Elder Guardian Head"
+    hdb_id: "HDB_ELDER_GUARDIAN"
+    category: "hostile"
+    description: "Massive laser and mining fatigue aura"
+    ability:
+      type: "elder_guardian_powers"
+      activation: "left_click"
+      params:
+        mega_laser: true
+        laser_damage: 25.0
+        fatigue_aura: true
+        aura_radius: 20.0
+        water_mastery: true
+        monument_powers: true
+
+  shulker:
+    display_name: "&eShulker Head"
+    hdb_id: "HDB_SHULKER"
+    category: "hostile"
+    description: "Levitation attacks and shell defense"
+    ability:
+      type: "shulker_powers"
+      activation: "left_click"
+      params:
+        levitation_bullets: true
+        shell_defense: true
+        teleportation: true
+        bullet_damage: 8.0
+        levitation_duration: 10
+        end_immunity: true
+
+  phantom:
+    display_name: "&8Phantom Head"
+    hdb_id: "HDB_PHANTOM"
+    category: "hostile"
+    description: "Night flight and phantom membrane abilities"
+    ability:
+      type: "phantom_flight"
+      activation: "left_click"
+      params:
+        night_flight: true
+        phantom_dive: true
+        insomnia_immunity: true
+        membrane_repair: true
+        sky_attacks: true
+        darkness_vision: true
+
+  drowned:
+    display_name: "&3Drowned Head"
+    hdb_id: "HDB_DROWNED"
+    category: "hostile"
+    description: "Trident mastery and underwater combat"
+    ability:
+      type: "drowned_trident_mastery"
+      activation: "left_click"
+      params:
+        trident_throwing: true
+        trident_loyalty: true
+        riptide_power: true
+        channeling_power: true
+        underwater_combat: true
+        nautilus_shell_finding: true
+
+  husk:
+    display_name: "&6Husk Head"
+    hdb_id: "HDB_HUSK"
+    category: "hostile"
+    description: "Desert survival and hunger attacks"
+    ability:
+      type: "desert_husk_powers"
+      activation: "left_click"
+      params:
+        desert_immunity: true
+        hunger_attack: true
+        sand_walking: true
+        sun_immunity: true
+        mummy_wrap: true
+        desert_speed: 1.5
+
+  stray:
+    display_name: "&bStray Head"
+    hdb_id: "HDB_STRAY"
+    category: "hostile"
+    description: "Ice arrows and cold immunity"
+    ability:
+      type: "stray_ice_powers"
+      activation: "left_click"
+      params:
+        ice_arrows: true
+        cold_immunity: true
+        slowness_arrows: true
+        ice_walking: true
+        freeze_enemies: true
+        tundra_speed: 1.3
+
+  wither_skeleton:
+    display_name: "&0Wither Skeleton Head"
+    hdb_id: "HDB_WITHER_SKELETON"
+    category: "hostile"
+    description: "Wither attacks and nether immunity"
+    ability:
+      type: "wither_skeleton_powers"
+      activation: "left_click"
+      params:
+        wither_attacks: true
+        nether_immunity: true
+        fire_immunity: true
+        wither_sword: true
+        skeleton_army: 2
+        bone_shield: true
+
+  zombified_piglin:
+    display_name: "&7Zombified Piglin Head"
+    hdb_id: "HDB_ZOMBIFIED_PIGLIN"
+    category: "hostile"
+    description: "Gold sword mastery and nether horde"
+    ability:
+      type: "zombified_piglin_powers"
+      activation: "left_click"
+      params:
+        gold_sword_mastery: true
+        nether_horde: 5
+        fire_immunity: true
+        gold_detection: true
+        pack_mentality: true
+        nether_speed: 1.8
+
+  piglin:
+    display_name: "&cPiglin Head"
+    hdb_id: "HDB_PIGLIN"
+    category: "hostile"
+    description: "Gold mastery and crossbow skills"
+    ability:
+      type: "piglin_gold_mastery"
+      activation: "left_click"
+      params:
+        gold_detection: true
+        auto_bartering: true
+        crossbow_mastery: true
+        gold_armor_bonus: true
+        piglin_language: true
+        nether_navigation: true
+
+  piglin_brute:
+    display_name: "&4Piglin Brute Head"
+    hdb_id: "HDB_PIGLIN_BRUTE"
+    category: "hostile"
+    description: "Massive strength and golden axe mastery"
+    ability:
+      type: "piglin_brute_strength"
+      activation: "left_click"
+      params:
+        massive_strength: 5.0
+        golden_axe_mastery: true
+        knockback_immunity: true
+        bastion_knowledge: true
+        brute_charge: true
+        intimidation: true
+
+  hoglin:
+    display_name: "&cHoglin Head"
+    hdb_id: "HDB_HOGLIN"
+    category: "hostile"
+    description: "Charging attacks and knockback power"
+    ability:
+      type: "hoglin_charge_powers"
+      activation: "left_click"
+      params:
+        charge_attack: true
+        charge_damage: 18.0
+        knockback_power: 4.0
+        tusk_gore: true
+        crimson_forest_speed: 2.0
+        warped_fear: false
+
+  zoglin:
+    display_name: "&8Zoglin Head"
+    hdb_id: "HDB_ZOGLIN"
+    category: "hostile"
+    description: "Berserk rage and undead strength"
+    ability:
+      type: "zoglin_berserk"
+      activation: "left_click"
+      params:
+        berserk_mode: true
+        attack_speed: 2.5
+        damage_boost: 2.0
+        fear_immunity: true
+        undead_strength: true
+        rampage_duration: 30
+
+  vindicator:
+    display_name: "&4Vindicator Head"
+    hdb_id: "HDB_VINDICATOR"
+    category: "hostile"
+    description: "Axe mastery and raid leader abilities"
+    ability:
+      type: "vindicator_axe_mastery"
+      activation: "left_click"
+      params:
+        axe_mastery: true
+        door_breaking: true
+        raid_leader: true
+        johnny_mode: false
+        axe_throwing: true
+        intimidation_aura: true
+
+  pillager:
+    display_name: "&6Pillager Head"
+    hdb_id: "HDB_PILLAGER"
+    category: "hostile"
+    description: "Crossbow expertise and raid coordination"
+    ability:
+      type: "pillager_crossbow_mastery"
+      activation: "left_click"
+      params:
+        crossbow_mastery: true
+        quick_charge: 3
+        multishot: true
+        piercing: 2
+        raid_coordination: true
+        banner_detection: true
+
+  ravager:
+    display_name: "&8Ravager Head"
+    hdb_id: "HDB_RAVAGER"
+    category: "hostile"
+    description: "Massive charge attacks and block breaking"
+    ability:
+      type: "ravager_rampage"
+      activation: "left_click"
+      params:
+        rampage_charge: true
+        block_breaking: true
+        massive_damage: 25.0
+        knockback_immunity: true
+        fear_inducing: true
+        raid_beast: true
+
+  evoker:
+    display_name: "&dEvoker Head"
+    hdb_id: "HDB_EVOKER"
+    category: "hostile"
+    description: "Summons vexes and casts evoker fangs"
+    ability:
+      type: "evoker_magic"
+      activation: "left_click"
+      params:
+        summon_vexes: 4
+        evoker_fangs: true
+        fang_line_length: 8
+        magic_resistance: true
+        totem_knowledge: true
+        illager_language: true
+
+  vex:
+    display_name: "&8Vex Head"
+    hdb_id: "HDB_VEX"
+    category: "hostile"
+    description: "Phase through blocks and sword attacks"
+    ability:
+      type: "vex_phasing"
+      activation: "left_click"
+      params:
+        phase_through_blocks: true
+        iron_sword_mastery: true
+        flight_enabled: true
+        surprise_attacks: true
+        evoker_loyalty: true
+        spectral_form: 15
+
+  illusioner:
+    display_name: "&5Illusioner Head"
+    hdb_id: "HDB_ILLUSIONER"
+    category: "hostile"
+    description: "Creates illusions and invisibility"
+    ability:
+      type: "illusion_magic"
+      activation: "left_click"
+      params:
+        create_illusions: 4
+        invisibility_cloak: true
+        bow_mastery: true
+        blindness_arrows: true
+        mirror_images: true
+        illusion_duration: 30
+
+  # === BOSS MOBS (3) ===
+  
+  warden:
+    display_name: "&0&lWarden Head"
+    hdb_id: "HDB_WARDEN"
+    category: "boss"
+    description: "Ancient guardian with sonic, darkness, and detection powers"
+    abilities:
+      ability_1:
+        name: "Sonic Boom"
+        activation: "left_click"
+        type: "warden_sonic_boom"
+        params:
+          damage: 30.0
+          range: 20.0
+          penetrates_armor: true
+          penetrates_blocks: true
+          knockback: 6.0
+          sonic_particles: true
+      
+      ability_2:
+        name: "Darkness Pulse"
+        activation: "shift_left_click"
+        type: "warden_darkness"
+        params:
+          radius: 15.0
+          darkness_duration: 20
+          blindness_duration: 10
+          fear_effect: true
+          sculk_spread: true
+      
+      ability_3:
+        name: "Vibration Sense"
+        activation: "double_left_click"
+        type: "warden_vibration_detection"
+        params:
+          detection_radius: 64.0
+          reveal_invisible: true
+          track_movement: true
+          duration: 45
+          sculk_sensors: true
+          heartbeat_detection: true
+
+  ender_dragon:
+    display_name: "&5&lEnder Dragon Head"
+    hdb_id: "HDB_ENDER_DRAGON"
+    category: "boss"
+    description: "Legendary dragon with fireball, crystal, and flight powers"
+    abilities:
+      ability_1:
+        name: "Dragon Fireball"
+        activation: "left_click"
+        type: "dragon_fireball_attack"
+        params:
+          damage: 25.0
+          explosion_radius: 6.0
+          lingering_damage: true
+          dragon_breath_cloud: true
+          penetrates_blocks: true
+      
+      ability_2:
+        name: "Summon Ender Crystals"
+        activation: "shift_left_click"
+        type: "summon_ender_crystals"
+        params:
+          crystal_count: 4
+          healing_radius: 10.0
+          healing_rate: 3.0
+          duration: 60
+          explosive_death: true
+          end_stone_pillars: true
+      
+      ability_3:
+        name: "Dragon Wings Flight"
+        activation: "double_left_click"
+        type: "dragon_flight_mastery"
+        params:
+          flight_speed: 3.0
+          duration: 90
+          wind_attacks: true
+          dive_bomb: true
+          dragon_roar: true
+          end_mastery: true
+
+  wither:
+    display_name: "&0&lWither Head"
+    hdb_id: "HDB_WITHER"
+    category: "boss"
+    description: "Undead destroyer with skull, shield, and storm powers"
+    abilities:
+      ability_1:
+        name: "Wither Skull Barrage"
+        activation: "left_click"
+        type: "wither_skull_barrage"
+        params:
+          skull_count: 8
+          tracking_skulls: true
+          wither_effect: true
+          explosion_damage: 12.0
+          blue_skull_chance: 0.3
+      
+      ability_2:
+        name: "Wither Shield Aura"
+        activation: "shift_left_click"
+        type: "wither_shield_aura"
+        params:
+          damage_reduction: 0.75
+          reflect_damage: true
+          aura_radius: 8.0
+          duration: 45
+          wither_immunity: true
+          undead_command: true
+      
+      ability_3:
+        name: "Wither Storm"
+        activation: "double_left_click"
+        type: "wither_storm_devastation"
+        params:
+          storm_radius: 20.0
+          duration: 60
+          wither_rain: true
+          soul_absorption: true
+          undead_army: 6
+          nether_star_power: true
+
+  # === PASSIVE/NEUTRAL MOBS (25+) ===
+  
+  cow:
+    display_name: "&eCow Head"
+    hdb_id: "HDB_COW"
+    category: "passive"
+    description: "Infinite milk and healing aura"
+    ability:
+      type: "cow_milk_powers"
+      activation: "left_click"
+      params:
+        infinite_milk: true
+        healing_aura: true
+        aura_radius: 8.0
+        heal_amount: 3.0
+        effect_clearing: true
+        peaceful_aura: true
+
+  pig:
+    display_name: "&dPig Head"
+    hdb_id: "HDB_PIG"
+    category: "passive"
+    description: "Super speed and carrot detection"
+    ability:
+      type: "pig_speed_powers"
+      activation: "passive"
+      params:
+        speed_boost: 2.5
+        carrot_detection: true
+        detection_radius: 25.0
+        mud_immunity: true
+        truffle_finding: true
+        farm_knowledge: true
+
+  sheep:
+    display_name: "&fSheep Head"
+    hdb_id: "HDB_SHEEP"
+    category: "passive"
+    description: "Infinite wool and jump abilities"
+    ability:
+      type: "sheep_wool_powers"
+      activation: "left_click"
+      params:
+        infinite_wool: true
+        color_changing: true
+        jump_boost: 4
+        fall_damage_immunity: true
+        grass_eating: true
+        flock_calling: 3
+
+  chicken:
+    display_name: "&fChicken Head"
+    hdb_id: "HDB_CHICKEN"
+    category: "passive"
+    description: "Slow falling and egg production"
+    ability:
+      type: "chicken_flight_powers"
+      activation: "passive"
+      params:
+        slow_falling: true
+        egg_production: true
+        feather_falling: true
+        double_jump: true
+        chicken_army: 5
+        seed_detection: true
+
+  rabbit:
+    display_name: "&7Rabbit Head"
+    hdb_id: "HDB_RABBIT"
+    category: "passive"
+    description: "Super jumping and carrot powers"
+    ability:
+      type: "rabbit_jump_powers"
+      activation: "left_click"
+      params:
+        super_jump: 6
+        speed_boost: 3.0
+        carrot_powers: true
+        bunny_hop: true
+        lucky_foot: true
+        vegetable_detection: true
+
+  horse:
+    display_name: "&6Horse Head"
+    hdb_id: "HDB_HORSE"
+    category: "passive"
+    description: "Super speed and jumping abilities"
+    ability:
+      type: "horse_speed_mastery"
+      activation: "passive"
+      params:
+        speed_boost: 4.0
+        jump_boost: 6
+        stamina_infinite: true
+        saddle_mastery: true
+        horse_calling: true
+        plains_speed: 2.0
+
+  donkey:
+    display_name: "&6Donkey Head"
+    hdb_id: "HDB_DONKEY"
+    category: "passive"
+    description: "Chest carrying and mountain climbing"
+    ability:
+      type: "donkey_pack_powers"
+      activation: "left_click"
+      params:
+        chest_carrying: true
+        extra_inventory: 15
+        mountain_climbing: true
+        sure_footed: true
+        pack_animal: true
+        desert_endurance: true
+
+  mule:
+    display_name: "&6Mule Head"
+    hdb_id: "HDB_MULE"
+    category: "passive"
+    description: "Combined horse and donkey abilities"
+    ability:
+      type: "mule_hybrid_powers"
+      activation: "left_click"
+      params:
+        speed_boost: 2.5
+        chest_carrying: true
+        jump_boost: 3
+        hybrid_vigor: true
+        pack_mastery: true
+        terrain_adaptation: true
+
+  llama:
+    display_name: "&fLlama Head"
+    hdb_id: "HDB_LLAMA"
+    category: "passive"
+    description: "Spit attacks and caravan leadership"
+    ability:
+      type: "llama_spit_powers"
+      activation: "left_click"
+      params:
+        spit_attack: true
+        spit_damage: 5.0
+        spit_range: 20.0
+        caravan_leader: true
+        carpet_decoration: true
+        mountain_climbing: true
+
+  wolf:
+    display_name: "&7Wolf Head"
+    hdb_id: "HDB_WOLF"
+    category: "passive"
+    description: "Pack leadership and enhanced senses"
+    ability:
+      type: "wolf_pack_leader"
+      activation: "left_click"
+      params:
+        pack_summoning: 5
+        enhanced_senses: true
+        night_vision: true
+        tracking_abilities: true
+        loyalty_bond: true
+        howl_communication: true
+
+  cat:
+    display_name: "&6Cat Head"
+    hdb_id: "HDB_CAT"
+    category: "passive"
+    description: "Stealth abilities and creeper repelling"
+    ability:
+      type: "cat_stealth_powers"
+      activation: "passive"
+      params:
+        stealth_mode: true
+        creeper_repelling: true
+        nine_lives: true
+        silent_movement: true
+        night_hunter: true
+        phantom_scaring: true
+
+  ocelot:
+    display_name: "&eOcelot Head"
+    hdb_id: "HDB_OCELOT"
+    category: "passive"
+    description: "Jungle agility and creeper fear"
+    ability:
+      type: "ocelot_jungle_powers"
+      activation: "passive"
+      params:
+        jungle_speed: 2.0
+        tree_climbing: true
+        creeper_fear: true
+        fish_detection: true
+        stealth_hunting: true
+        jungle_navigation: true
+
+  parrot:
+    display_name: "&aParrot Head"
+    hdb_id: "HDB_PARROT"
+    category: "passive"
+    description: "Sound mimicking and flight abilities"
+    ability:
+      type: "parrot_mimicry"
+      activation: "left_click"
+      params:
+        sound_mimicking: true
+        flight_enabled: true
+        mob_detection: true
+        cookie_immunity: true
+        shoulder_perching: true
+        tropical_knowledge: true
+
+  panda:
+    display_name: "&7Panda Head"
+    hdb_id: "HDB_PANDA"
+    category: "passive"
+    description: "Bamboo powers and rolling attacks"
+    ability:
+      type: "panda_bamboo_powers"
+      activation: "left_click"
+      params:
+        bamboo_mastery: true
+        rolling_attack: true
+        lazy_mode: true
+        playful_nature: true
+        bamboo_detection: true
+        jungle_harmony: true
+
+  fox:
+    display_name: "&eFox Head"
+    hdb_id: "HDB_FOX"
+    category: "passive"
+    description: "Item carrying and berry finding"
+    ability:
+      type: "fox_cunning"
+      activation: "left_click"
+      params:
+        item_carrying: true
+        berry_detection: true
+        night_hunting: true
+        pounce_attack: true
+        snow_adaptation: true
+        clever_escape: true
+
+  bee:
+    display_name: "&eBee Head"
+    hdb_id: "HDB_BEE"
+    category: "passive"
+    description: "Pollination powers and honey production"
+    ability:
+      type: "bee_pollination"
+      activation: "left_click"
+      params:
+        pollination: true
+        honey_production: true
+        flower_detection: true
+        sting_attack: true
+        hive_knowledge: true
+        crop_growth_boost: true
+
+  polar_bear:
+    display_name: "&fPolar Bear Head"
+    hdb_id: "HDB_POLAR_BEAR"
+    category: "passive"
+    description: "Ice swimming and cold immunity"
+    ability:
+      type: "polar_bear_powers"
+      activation: "left_click"
+      params:
+        cold_immunity: true
+        ice_swimming: true
+        fish_hunting: true
+        cub_protection: true
+        arctic_navigation: true
+        ice_breaking: true
+
+  turtle:
+    display_name: "&2Turtle Head"
+    hdb_id: "HDB_TURTLE"
+    category: "passive"
+    description: "Shell protection and water breathing"
+    ability:
+      type: "turtle_shell_powers"
+      activation: "left_click"
+      params:
+        shell_protection: true
+        water_breathing: true
+        slow_falling: true
+        beach_navigation: true
+        seagrass_detection: true
+        egg_laying: true
+
+  # === AQUATIC MOBS (8+) ===
+  
+  dolphin:
+    display_name: "&bDolphin Head"
+    hdb_id: "HDB_DOLPHIN"
+    category: "aquatic"
+    description: "Underwater speed and treasure finding"
+    ability:
+      type: "dolphin_aquatic_mastery"
+      activation: "passive"
+      params:
+        underwater_speed: 3.0
+        dolphin_grace: true
+        treasure_detection: true
+        fish_friendship: true
+        ocean_navigation: true
+        playful_nature: true
+
+  squid:
+    display_name: "&8Squid Head"
+    hdb_id: "HDB_SQUID"
+    category: "aquatic"
+    description: "Ink defense and underwater camouflage"
+    ability:
+      type: "squid_ink_powers"
+      activation: "left_click"
+      params:
+        ink_cloud: true
+        underwater_invisibility: true
+        tentacle_grab: true
+        water_jet_propulsion: true
+        deep_sea_pressure: true
+        ink_sac_production: true
+
+  glow_squid:
+    display_name: "&5Glow Squid Head"
+    hdb_id: "HDB_GLOW_SQUID"
+    category: "aquatic"
+    description: "Bioluminescence and glow ink powers"
+    ability:
+      type: "glow_squid_luminescence"
+      activation: "left_click"
+      params:
+        bioluminescence: true
+        glow_ink_production: true
+        underwater_lighting: true
+        hypnotic_glow: true
+        deep_sea_vision: true
+        item_frame_glowing: true
+
+  axolotl:
+    display_name: "&dAxolotl Head"
+    hdb_id: "HDB_AXOLOTL"
+    category: "aquatic"
+    description: "Regeneration and underwater combat"
+    ability:
+      type: "axolotl_regeneration"
+      activation: "passive"
+      params:
+        regeneration: 2
+        underwater_combat: true
+        guardian_hunting: true
+        playing_dead: true
+        bucket_immunity: true
+        cave_adaptation: true
+
+  cod:
+    display_name: "&7Cod Head"
+    hdb_id: "HDB_COD"
+    category: "aquatic"
+    description: "School swimming and water navigation"
+    ability:
+      type: "cod_school_swimming"
+      activation: "passive"
+      params:
+        school_swimming: true
+        water_speed: 2.0
+        ocean_navigation: true
+        fishing_luck: true
+        underwater_breathing: true
+        current_riding: true
+
+  salmon:
+    display_name: "&cSalmon Head"
+    hdb_id: "HDB_SALMON"
+    category: "aquatic"
+    description: "Upstream swimming and jumping"
+    ability:
+      type: "salmon_upstream_powers"
+      activation: "left_click"
+      params:
+        upstream_swimming: true
+        water_jumping: true
+        river_navigation: true
+        spawning_knowledge: true
+        current_mastery: true
+        fish_leadership: true
+
+  tropical_fish:
+    display_name: "&6Tropical Fish Head"
+    hdb_id: "HDB_TROPICAL_FISH"
+    category: "aquatic"
+    description: "Colorful swimming and coral reef powers"
+    ability:
+      type: "tropical_fish_colors"
+      activation: "left_click"
+      params:
+        color_changing: true
+        coral_reef_speed: 2.5
+        tropical_immunity: true
+        bucket_escape: true
+        reef_navigation: true
+        exotic_beauty: true
+
+  pufferfish:
+    display_name: "&ePufferfish Head"
+    hdb_id: "HDB_PUFFERFISH"
+    category: "aquatic"
+    description: "Poison defense and puffing abilities"
+    ability:
+      type: "pufferfish_defense"
+      activation: "left_click"
+      params:
+        poison_defense: true
+        puffing_ability: true
+        poison_immunity: true
+        thorns_effect: 3
+        underwater_spikes: true
+        defensive_expansion: true
+
+  # === CONSTRUCTED/UTILITY MOBS (4) ===
+  
+  iron_golem:
+    display_name: "&7Iron Golem Head"
+    hdb_id: "HDB_IRON_GOLEM"
+    category: "constructed"
+    description: "Massive strength and village protection"
+    ability:
+      type: "iron_golem_strength"
+      activation: "left_click"
+      params:
+        massive_strength: 6.0
+        knockback_immunity: true
+        village_protection: true
+        iron_throw: true
+        poppy_giving: true
+        villager_friendship: true
+
+  snow_golem:
+    display_name: "&fSnow Golem Head"
+    hdb_id: "HDB_SNOW_GOLEM"
+    category: "constructed"
+    description: "Snowball barrage and cold powers"
+    ability:
+      type: "snow_golem_powers"
+      activation: "left_click"
+      params:
+        snowball_barrage: 15
+        cold_immunity: true
+        snow_trail: true
+        freeze_enemies: true
+        winter_mastery: true
+        snow_block_creation: true
+
+  allay:
+    display_name: "&bAllay Head"
+    hdb_id: "HDB_ALLAY"
+    category: "utility"
+    description: "Item collection and music dancing"
+    ability:
+      type: "allay_collection"
+      activation: "left_click"
+      params:
+        item_collection: true
+        music_dancing: true
+        note_block_love: true
+        item_duplication: false
+        helpful_nature: true
+        flying_assistance: true
+
+  # === NETHER MOBS (5+) ===
+  
+  strider:
+    display_name: "&cStrider Head"
+    hdb_id: "HDB_STRIDER"
+    category: "nether"
+    description: "Lava walking and nether navigation"
+    ability:
+      type: "strider_lava_walking"
+      activation: "passive"
+      params:
+        lava_walking: true
+        lava_swimming: true
+        nether_navigation: true
+        warped_fungus_detection: true
+        saddle_riding: true
+        nether_speed: 2.2
+
+  # === ADDITIONAL MOBS FOR COMPLETE COVERAGE ===
+  
+  villager:
+    display_name: "&eVillager Head"
+    hdb_id: "HDB_VILLAGER"
+    category: "passive"
+    description: "Trading mastery, emerald detection, and economic benefits"
+    ability:
+      type: "villager_trading_mastery"
+      activation: "left_click"
+      params:
+        trading_mastery: true
+        emerald_detection: true
+        emerald_radius: 20.0
+        profession_knowledge: true
+        village_navigation: true
+        gossip_network: true
+        trade_discounts: 0.5
+        trading_luck: 3
+        reputation_boost: true
+
+  wandering_trader:
+    display_name: "&bWandering Trader Head"
+    hdb_id: "HDB_WANDERING_TRADER"
+    category: "passive"
+    description: "Exotic trading and llama friendship"
+    ability:
+      type: "wandering_trader_exotic"
+      activation: "left_click"
+      params:
+        exotic_trades: true
+        llama_friendship: true
+        rare_item_detection: true
+        biome_knowledge: true
+        invisibility_potion: true
+        merchant_luck: true
+
+  bat:
+    display_name: "&8Bat Head"
+    hdb_id: "HDB_BAT"
+    category: "passive"
+    description: "Echolocation and cave navigation"
+    ability:
+      type: "bat_echolocation"
+      activation: "passive"
+      params:
+        echolocation: true
+        cave_navigation: true
+        darkness_vision: true
+        hanging_ability: true
+        sound_detection: true
+        cave_mapping: true
+
+  # === RARE/SPECIAL MOBS ===
+  
+  mooshroom:
+    display_name: "&cMooshroom Head"
+    hdb_id: "HDB_MOOSHROOM"
+    category: "passive"
+    description: "Mushroom powers and stew production"
+    ability:
+      type: "mooshroom_mushroom_powers"
+      activation: "left_click"
+      params:
+        mushroom_production: true
+        stew_creation: true
+        mycelium_spreading: true
+        suspicious_stew: true
+        fungal_immunity: true
+        island_knowledge: true
+
+  goat:
+    display_name: "&fGoat Head"
+    hdb_id: "HDB_GOAT"
+    category: "passive"
+    description: "Mountain climbing and ramming attacks"
+    ability:
+      type: "goat_mountain_powers"
+      activation: "left_click"
+      params:
+        mountain_climbing: true
+        ramming_attack: true
+        fall_damage_immunity: true
+        horn_dropping: true
+        screaming_variant: true
+        cliff_jumping: true
+
+  camel:
+    display_name: "&6Camel Head"
+    hdb_id: "HDB_CAMEL"
+    category: "passive"
+    description: "Desert travel and dual riding"
+    ability:
+      type: "camel_desert_mastery"
+      activation: "left_click"
+      params:
+        desert_speed: 2.0
+        dual_riding: true
+        sand_immunity: true
+        cactus_immunity: true
+        water_conservation: true
+        desert_navigation: true
+
+  frog:
+    display_name: "&aFrog Head"
+    hdb_id: "HDB_FROG"
+    category: "passive"
+    description: "Tongue attacks and swamp powers"
+    ability:
+      type: "frog_swamp_powers"
+      activation: "left_click"
+      params:
+        tongue_attack: true
+        tongue_range: 8.0
+        lily_pad_jumping: true
+        swamp_speed: 1.8
+        firefly_detection: true
+        tadpole_knowledge: true
+
+  sniffer:
+    display_name: "&6Sniffer Head"
+    hdb_id: "HDB_SNIFFER"
+    category: "passive"
+    description: "Ancient seed detection and archaeology"
+    ability:
+      type: "sniffer_archaeology"
+      activation: "left_click"
+      params:
+        seed_detection: true
+        archaeology_mastery: true
+        ancient_knowledge: true
+        digging_ability: true
+        rare_plant_finding: true
+        historical_wisdom: true
+
+  # === LEGENDARY FUSION HEAD ===
+  
+  apocalypse_head:
+    display_name: "&0&l🌀 APOCALYPSE HEAD"
+    hdb_id: "HDB_APOCALYPSE"  # Special fusion head texture
+    category: "legendary"
+    description: "Ultimate fusion of Dragon and Wither power"
+    fusion_recipe:
+      required_heads: ["ender_dragon", "wither"]
+      materials:
+        dragon_head: 1
+        wither_skeleton_skull: 1
+        nether_star: 3
+        obsidian: 4
+        end_crystal: 1
+      requires_dark_altar: true
+      requires_boss_kills: true
+    ability:
+      type: "black_hole"
+      activation: "left_click"
+      params:
+        radius: 15.0
+        duration: 5
+        pull_strength: 0.8
+        damage_per_tick: 2.0
+        void_damage: 5.0
+        launch_force: 2.0
+        particle_density: "high"
+        sound_effects: "apocalyptic"
+
+# === GLOBAL HEAD SETTINGS ===
+global_settings:
+  # Total heads configured (including fusion)
+  total_heads: 59
+  
+  # Helmet slot requirement
+  require_helmet_slot: true
+  
+  # Visual effects when wearing heads
+  wearing_particles: true
+  wearing_sounds: true
+  
+  # Ability restrictions
+  one_head_at_time: true
+  creative_mode_abilities: true
+  
+  # Head durability system
+  heads_have_durability: false
+  default_durability: 100
+  
+  # Special head categories
+  boss_heads: ["warden", "ender_dragon", "wither"]
+  rare_heads: ["sniffer", "allay", "warden", "apocalypse_head"]
+  utility_heads: ["iron_golem", "snow_golem", "allay", "villager", "bee"]
+  
+  # Arrow fusion system
+  arrow_fusion:
+    enabled: true
+    recipes:
+      creeper_arrow:
+        ingredients: ["arrow", "creeper_head"]
+        result: "Explosive arrow that blasts on contact"
+      ender_arrow:
+        ingredients: ["arrow", "enderman_head"]  
+        result: "Teleportation arrow - teleports shooter to impact"
+      fire_arrow:
+        ingredients: ["arrow", "blaze_head"]
+        result: "Fire arrow that ignites targets and trail"
+      frost_arrow:
+        ingredients: ["arrow", "stray_head"]
+        result: "Frost arrow that freezes targets"
+      poison_arrow:
+        ingredients: ["arrow", "cave_spider_head"]
+        result: "Poison arrow with spreading venom"
+      thunder_arrow:
+        ingredients: ["arrow", "charged_creeper_essence"]
+        result: "Lightning arrow that strikes thunder"
+      void_arrow:
+        ingredients: ["arrow", "endermite_head"]
+        result: "Void arrow that phases through blocks"
+      healing_arrow:
+        ingredients: ["arrow", "allay_head"]
+        result: "Healing arrow for supporting allies"

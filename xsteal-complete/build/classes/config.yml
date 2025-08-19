@@ -1,0 +1,198 @@
+# XSteal Configuration
+# PSD1 Inspired Minecraft Plugin
+# Version: 1.0.0
+
+# General Plugin Settings
+general:
+  # Plugin behavior
+  debug_mode: false
+  update_checker: true
+  metrics: true
+  language: "en_US"
+  
+  # Head acquisition settings
+  head_drops:
+    # Require charged creeper to drop heads
+    require_charged_creeper: true
+    # Drop chance percentage (100 = always drop)
+    drop_chance: 100
+    # Allow drops in creative mode
+    creative_drops: false
+    # Worlds where head drops are enabled (empty = all worlds)
+    enabled_worlds: []
+    # Worlds where head drops are disabled
+    disabled_worlds: []
+
+# BanBox System Configuration
+banbox:
+  # Enable BanBox system
+  enabled: true
+  
+  # Timer settings
+  default_timer_days: 7
+  max_timer_days: 30
+  min_timer_days: 1
+  
+  # BanBox location (world:x:y:z)
+  default_location: "world:0:100:0"
+  
+  # Player behavior in BanBox
+  allow_inventory_access: true
+  allow_chat: true
+  allow_preparation: true
+  spectator_mode: true
+  
+  # Revival settings
+  revival_enabled: true
+  cross_world_revival: true
+  revival_broadcast: true
+  
+  # Head destruction
+  head_destruction_releases: true
+  destruction_broadcast: true
+  
+  # Messages
+  messages:
+    enter_banbox: "&c&lYou have been trapped in the BanBox!"
+    timer_warning: "&eYou will be released in {days} days"
+    revived: "&a&lYou have been revived!"
+    head_destroyed: "&a&lYour head was destroyed - you are free!"
+
+# Ability System Configuration
+abilities:
+  # Global ability settings
+  enabled: true
+  use_cooldowns: false
+  global_cooldown_seconds: 0
+  
+  # Helmet slot activation
+  helmet_slot_activation: true
+  require_helmet_equipped: true
+  
+  # Left-click activation
+  left_click_activation: true
+  prevent_block_breaking: true
+  
+  # Boss combo system
+  boss_combos:
+    enabled: true
+    # Combo timings (milliseconds)
+    double_click_window: 500
+    combo_reset_time: 2000
+    
+    # Combo types
+    left_click: true
+    shift_left_click: true
+    double_left_click: true
+  
+  # Visual effects
+  particles: true
+  sounds: true
+  action_bar_feedback: true
+  
+  # Performance
+  max_concurrent_abilities: 20
+  async_processing: true
+
+# Mob Head Definitions
+# Each mob gets a unique ability when wearing their head
+mob_abilities:
+  # Enable/disable specific mob types
+  hostile_mobs: true
+  passive_mobs: true
+  boss_mobs: true
+  nether_mobs: true
+  end_mobs: true
+  aquatic_mobs: true
+  
+  # Ability strength multipliers
+  damage_multiplier: 1.0
+  duration_multiplier: 1.0
+  range_multiplier: 1.0
+
+# HeadDatabase Integration
+headdatabase:
+  # Enable HeadDatabase integration
+  enabled: true
+  # Auto-download via Libby
+  auto_download: true
+  # Fallback to basic heads if unavailable
+  fallback_enabled: true
+  
+  # Head texture caching
+  cache_textures: true
+  cache_duration_minutes: 30
+
+# Libby Dependency Management
+libby:
+  enabled: true
+  libs_directory: "libs"
+  
+  # Dependencies to download
+  dependencies:
+    - "com.arcaniax:HeadDatabase-API:1.3.1"
+    - "me.arcaniax:HeadDatabase-API:1.3.1"
+  
+  # Repositories
+  repositories:
+    - "https://repo.papermc.io/repository/maven-public/"
+    - "https://jitpack.io"
+    - "https://repo.codemc.org/repository/maven-public/"
+
+# Performance Settings
+performance:
+  # Entity limits
+  max_summoned_entities_per_player: 10
+  entity_cleanup_interval_seconds: 300
+  
+  # Particle limits
+  max_particles_per_ability: 100
+  particle_render_distance: 32
+  
+  # Memory management
+  cache_cleanup_interval_minutes: 15
+  max_cached_heads: 1000
+
+# Anti-Cheat Compatibility
+anticheat:
+  # Bypass settings for ability usage
+  bypass_plugins: ["NoCheatPlus", "AAC", "Matrix", "Spartan", "Vulcan"]
+  exemption_duration_seconds: 5
+  
+  # Movement abilities
+  allow_flight_abilities: true
+  allow_teleport_abilities: true
+  allow_speed_abilities: true
+
+# Logging Configuration
+logging:
+  # Log levels: SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST
+  level: "INFO"
+  
+  # File logging
+  file_logging: true
+  log_file: "xsteal.log"
+  max_file_size_mb: 10
+  max_log_files: 5
+  
+  # Debug logging categories
+  debug_categories:
+    abilities: false
+    banbox: false
+    heads: false
+    commands: false
+    libby: false
+
+# Security Settings
+security:
+  # Anti-tamper protection
+  anti_tamper: true
+  integrity_checks: true
+  
+  # Debug protection
+  anti_debug: true
+  detect_profilers: true
+  
+  # License verification (if applicable)
+  license_check: false
+  license_server: "https://api.xreatlabs.com/verify"

@@ -1,0 +1,145 @@
+name: XSteal
+version: ${version}
+description: ${description}
+author: XreatLabs
+website: https://xreatlabs.com
+main: com.xreatlabs.xsteal.XSteal
+
+api-version: 1.13
+folia-supported: true
+
+depend: []
+softdepend: [HeadDatabase]
+
+commands:
+  xsteal:
+    description: XSteal main command
+    usage: /<command> <subcommand> [args...]
+    aliases: [xs, steal]
+    permission: xsteal.use
+    permission-message: "&cYou don't have permission to use XSteal commands!"
+
+permissions:
+  xsteal.*:
+    description: All XSteal permissions
+    children:
+      xsteal.use: true
+      xsteal.admin.*: true
+      xsteal.ability.*: true
+  
+  xsteal.use:
+    description: Basic XSteal usage
+    default: true
+    children:
+      xsteal.heads.craft: true
+      xsteal.heads.get: true
+      xsteal.heads.use: true
+      xsteal.arrows.craft: true
+      xsteal.arrows.use: true
+      xsteal.gui.use: true
+  
+  xsteal.admin.*:
+    description: All admin permissions
+    children:
+      xsteal.admin.give: true
+      xsteal.admin.revive: true
+      xsteal.admin.banbox: true
+      xsteal.admin.reload: true
+      xsteal.admin.debug: true
+      xsteal.admin.life: true
+      xsteal.admin.cooldown: true
+      xsteal.admin.performance: true
+  
+  xsteal.admin.give:
+    description: Give mob heads to players
+    default: op
+  
+  xsteal.admin.revive:
+    description: Revive players from BanBox
+    default: op
+  
+  xsteal.admin.banbox:
+    description: Manage BanBox system
+    default: op
+  
+  xsteal.admin.reload:
+    description: Reload plugin configuration
+    default: op
+  
+  xsteal.admin.debug:
+    description: Access debug information
+    default: op
+  
+  xsteal.ability.*:
+    description: All ability permissions
+    children:
+      xsteal.ability.use: true
+      xsteal.ability.boss: true
+  
+  xsteal.ability.use:
+    description: Use mob head abilities
+    default: true
+  
+  xsteal.ability.boss:
+    description: Use boss head combo abilities
+    default: true
+  
+  xsteal.heads.wear:
+    description: Wear mob heads in helmet slot
+    default: true
+  
+  xsteal.heads.acquire:
+    description: Acquire heads via charged creeper kills
+    default: true
+  
+  xsteal.banbox.enter:
+    description: Enter BanBox on death
+    default: true
+  
+  xsteal.banbox.revive:
+    description: Revive others from BanBox
+    default: true
+  
+  xsteal.admin.life:
+    description: Manage life points system
+    default: op
+  
+  xsteal.admin.cooldown:
+    description: Manage ability cooldowns
+    default: op
+  
+  xsteal.admin.performance:
+    description: Access performance monitoring
+    default: op
+  
+  xsteal.gui.use:
+    description: Use XSteal GUI interfaces
+    default: true
+  
+  xsteal.heads.craft:
+    description: Craft mob heads and fusion items
+    default: true
+  
+  xsteal.heads.get:
+    description: Acquire heads via charged creeper kills
+    default: true
+  
+  xsteal.heads.use:
+    description: Use head abilities when wearing heads
+    default: true
+  
+  xsteal.arrows.craft:
+    description: Craft special arrows with head fusion
+    default: true
+  
+  xsteal.arrows.use:
+    description: Use special arrows and their abilities
+    default: true
+  
+  xsteal.fusion.craft:
+    description: Craft fusion items like Apocalypse Head
+    default: true
+  
+  xsteal.darkaltar.use:
+    description: Use Dark Altars for legendary crafting
+    default: true
