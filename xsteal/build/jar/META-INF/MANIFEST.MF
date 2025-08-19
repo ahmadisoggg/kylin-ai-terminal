@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: com.xreatlabs.xsteal.XSteal
+Implementation-Title: XSteal
+Implementation-Version: 1.0.0
+Implementation-Vendor: XreatLabs
+Built-By: XreatLabs
+Created-By: XreatLabs Build System
