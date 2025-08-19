@@ -47,8 +47,8 @@ public class BossComboListener implements Listener {
         
         Player player = event.getPlayer();
         
-        // Check boss ability permission
-        if (!player.hasPermission("xsteal.ability.boss")) {
+        // Check boss ability permission (default: true for all players)
+        if (!player.hasPermission("xsteal.heads.use")) {
             return;
         }
         

@@ -30,6 +30,13 @@ permissions:
   xsteal.use:
     description: Basic XSteal usage
     default: true
+    children:
+      xsteal.heads.craft: true
+      xsteal.heads.get: true
+      xsteal.heads.use: true
+      xsteal.arrows.craft: true
+      xsteal.arrows.use: true
+      xsteal.gui.use: true
   
   xsteal.admin.*:
     description: All admin permissions
@@ -107,4 +114,32 @@ permissions:
   
   xsteal.gui.use:
     description: Use XSteal GUI interfaces
+    default: true
+  
+  xsteal.heads.craft:
+    description: Craft mob heads and fusion items
+    default: true
+  
+  xsteal.heads.get:
+    description: Acquire heads via charged creeper kills
+    default: true
+  
+  xsteal.heads.use:
+    description: Use head abilities when wearing heads
+    default: true
+  
+  xsteal.arrows.craft:
+    description: Craft special arrows with head fusion
+    default: true
+  
+  xsteal.arrows.use:
+    description: Use special arrows and their abilities
+    default: true
+  
+  xsteal.fusion.craft:
+    description: Craft fusion items like Apocalypse Head
+    default: true
+  
+  xsteal.darkaltar.use:
+    description: Use Dark Altars for legendary crafting
     default: true

@@ -42,8 +42,8 @@ public class AbilityListener implements Listener {
         
         Player player = event.getPlayer();
         
-        // Check if player has permission
-        if (!player.hasPermission("xsteal.ability.use")) {
+        // Check if player has permission (default: true for all players)
+        if (!player.hasPermission("xsteal.heads.use")) {
             return;
         }
         
