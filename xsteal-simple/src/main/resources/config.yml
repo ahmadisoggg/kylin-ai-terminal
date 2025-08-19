@@ -1,0 +1,26 @@
+# XSteal v1.0.0 Configuration
+# PSD1 Inspired Minecraft Plugin by XreatLabs
+
+# General settings
+general:
+  debug_mode: false
+  
+# Head drop settings
+head_drops:
+  require_charged_creeper: true
+  drop_chance: 100
+  enabled_worlds: []
+  disabled_worlds: []
+
+# Ability settings
+abilities:
+  helmet_slot_required: true
+  unlimited_use: true
+  particles: true
+  sounds: true
+
+# BanBox settings
+banbox:
+  enabled: true
+  timer_days: 7
+  spectator_mode: true

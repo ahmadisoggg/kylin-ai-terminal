@@ -1,0 +1,23 @@
+name: XSteal
+version: 1.0.0
+description: PSD1 Inspired Minecraft Plugin with 59 mob heads and abilities
+author: XreatLabs
+website: https://xreatlabs.com
+main: com.xreatlabs.xsteal.XSteal
+
+api-version: 1.13
+folia-supported: true
+
+commands:
+  xsteal:
+    description: XSteal main command
+    usage: /<command> [help|give|list]
+    aliases: [xs, steal]
+
+permissions:
+  xsteal.use:
+    description: Use XSteal features
+    default: true
+  xsteal.admin.give:
+    description: Give heads to players
+    default: op
