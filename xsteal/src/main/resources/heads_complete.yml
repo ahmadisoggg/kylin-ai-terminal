@@ -1133,17 +1133,20 @@ heads:
     display_name: "&eVillager Head"
     hdb_id: "HDB_VILLAGER"
     category: "passive"
-    description: "Trading mastery and village knowledge"
+    description: "Trading mastery, emerald detection, and economic benefits"
     ability:
-      type: "villager_trading"
+      type: "villager_trading_mastery"
       activation: "left_click"
       params:
         trading_mastery: true
         emerald_detection: true
+        emerald_radius: 20.0
         profession_knowledge: true
         village_navigation: true
         gossip_network: true
         trade_discounts: 0.5
+        trading_luck: 3
+        reputation_boost: true
 
   wandering_trader:
     display_name: "&bWandering Trader Head"
@@ -1311,5 +1314,34 @@ global_settings:
   
   # Special head categories
   boss_heads: ["warden", "ender_dragon", "wither"]
-  rare_heads: ["sniffer", "allay", "warden"]
-  utility_heads: ["iron_golem", "snow_golem", "allay"]
+  rare_heads: ["sniffer", "allay", "warden", "apocalypse_head"]
+  utility_heads: ["iron_golem", "snow_golem", "allay", "villager", "bee"]
+  
+  # Arrow fusion system
+  arrow_fusion:
+    enabled: true
+    recipes:
+      creeper_arrow:
+        ingredients: ["arrow", "creeper_head"]
+        result: "Explosive arrow that blasts on contact"
+      ender_arrow:
+        ingredients: ["arrow", "enderman_head"]  
+        result: "Teleportation arrow - teleports shooter to impact"
+      fire_arrow:
+        ingredients: ["arrow", "blaze_head"]
+        result: "Fire arrow that ignites targets and trail"
+      frost_arrow:
+        ingredients: ["arrow", "stray_head"]
+        result: "Frost arrow that freezes targets"
+      poison_arrow:
+        ingredients: ["arrow", "cave_spider_head"]
+        result: "Poison arrow with spreading venom"
+      thunder_arrow:
+        ingredients: ["arrow", "charged_creeper_essence"]
+        result: "Lightning arrow that strikes thunder"
+      void_arrow:
+        ingredients: ["arrow", "endermite_head"]
+        result: "Void arrow that phases through blocks"
+      healing_arrow:
+        ingredients: ["arrow", "allay_head"]
+        result: "Healing arrow for supporting allies"
