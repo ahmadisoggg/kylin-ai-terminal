@@ -1,0 +1,183 @@
+# HeadStealX Configuration
+# Plugin Version: 1.0.0
+# Compatible with Minecraft 1.8 - 1.21.8
+
+general:
+  # Head drop settings
+  head_drop:
+    # Require charged creeper to drop heads
+    require_charged_creeper: true
+    # Drop chance percentage (100 = always drop)
+    drop_chance_percent: 100
+    # Allow heads to drop in creative mode
+    creative_mode_drops: false
+    # Worlds where head drops are enabled (empty = all worlds)
+    enabled_worlds: []
+    # Worlds where head drops are disabled
+    disabled_worlds: []
+  
+  # Plugin behavior settings
+  behavior:
+    # Enable debug logging
+    debug_mode: false
+    # Check for plugin updates
+    update_checker: true
+    # Send anonymous usage statistics
+    metrics: true
+    # Language file to use
+    language: "en_US"
+
+# BanBox system configuration
+banbox:
+  # Enable the banbox system
+  enabled: true
+  # Days until automatic unban (0 = never)
+  auto_unban_days: 7
+  # Default location for banned players (world:x:y:z)
+  banbox_default_location: "world:0:100:0"
+  # Allow reviving in different worlds
+  cross_world_revive: true
+  # Broadcast revive messages
+  broadcast_revives: true
+  # Keep inventory on banbox death
+  keep_inventory: false
+  # Experience penalty on death (0.0-1.0)
+  experience_penalty: 0.5
+
+# Ability system configuration
+abilities:
+  # Enable unlimited ability use
+  unlimited_use: true
+  # Enable cooldown system (overrides unlimited_use)
+  use_cooldowns: false
+  # Global cooldown in seconds (if enabled)
+  global_cooldown: 30
+  # Per-ability cooldown multiplier
+  cooldown_multiplier: 1.0
+  # Allow abilities in combat
+  combat_usage: true
+  # Allow abilities while sneaking
+  sneak_usage: true
+  # Particle effects for abilities
+  particles: true
+  # Sound effects for abilities
+  sounds: true
+  # Damage scaling with server difficulty
+  difficulty_scaling: true
+  # Boss ability combo timeout (seconds)
+  boss_combo_timeout: 5
+
+# Economy integration (requires Vault)
+economy:
+  # Enable economy features
+  enabled: false
+  # Cost to revive a player
+  revive_cost: 1000.0
+  # Cost to fuse heads
+  fuse_cost: 500.0
+  # Cost to clone heads
+  clone_cost: 250.0
+  # Reward for successful head drop
+  drop_reward: 100.0
+
+# Libby dependency management
+libby:
+  # Enable Libby for runtime dependencies
+  enabled: true
+  # Directory for downloaded libraries
+  libs_dir: "libs"
+  # Libraries to download at startup
+  libs:
+    - "com.arcaniax:HeadDatabase-API:1.3.1"
+    - "me.arcaniax:HeadDatabase-API:1.3.1"
+  # Repositories for library downloads
+  repositories:
+    - "https://repo.papermc.io/repository/maven-public/"
+    - "https://jitpack.io"
+    - "https://repo.codemc.org/repository/maven-public/"
+
+# Integration settings
+integrations:
+  # PlaceholderAPI integration
+  placeholderapi:
+    enabled: true
+  
+  # MythicMobs integration
+  mythicmobs:
+    enabled: true
+    # Allow abilities to affect MythicMobs
+    affect_mythic_mobs: true
+  
+  # DiscordSRV integration
+  discordsrv:
+    enabled: true
+    # Announce head drops in Discord
+    announce_drops: true
+    # Announce revives in Discord
+    announce_revives: true
+    # Discord channel for announcements
+    channel: "minecraft-events"
+
+# Performance settings
+performance:
+  # Maximum particles per ability use
+  max_particles: 50
+  # Async processing for non-critical tasks
+  async_processing: true
+  # Cache head data for better performance
+  cache_heads: true
+  # Cache duration in minutes
+  cache_duration: 30
+  # Maximum concurrent ability executions
+  max_concurrent_abilities: 10
+
+# Anti-cheat compatibility
+anticheat:
+  # Disable ability checks for these plugins
+  bypass_plugins:
+    - "NoCheatPlus"
+    - "AAC"
+    - "Matrix"
+    - "Spartan"
+  # Temporary exemption duration (seconds)
+  exemption_duration: 5
+
+# Database settings (for future expansion)
+database:
+  # Database type: sqlite, mysql, postgresql
+  type: "sqlite"
+  # Database file (for SQLite)
+  file: "headstealx.db"
+  # Connection settings (for MySQL/PostgreSQL)
+  host: "localhost"
+  port: 3306
+  database: "headstealx"
+  username: "root"
+  password: ""
+  # Connection pool settings
+  pool_size: 10
+  connection_timeout: 30000
+
+# Security and anti-tamper
+security:
+  # Enable anti-tamper checks
+  anti_tamper: true
+  # Enable license verification
+  license_check: false
+  # License server URL
+  license_server: "https://api.headstealx.com/verify"
+  # Server UUID for license verification
+  server_uuid: ""
+  
+# Logging configuration
+logging:
+  # Log level: FINE, INFO, WARNING, SEVERE
+  level: "INFO"
+  # Log to file
+  file_logging: true
+  # Log file name
+  log_file: "headstealx.log"
+  # Maximum log file size (MB)
+  max_file_size: 10
+  # Number of log files to keep
+  max_files: 5

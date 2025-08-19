@@ -1,0 +1,778 @@
+# HeadStealX Heads Configuration
+# All 58 mob heads with abilities as specified
+# HDB_* placeholders need to be replaced with actual HeadDatabase IDs
+
+heads:
+  # Hostile Mobs (Common)
+  zombie:
+    displayName: "&cZombie Head"
+    hdb_id: "HDB_ZOMBIE"
+    category: "hostile"
+    ability:
+      type: "lifesteal"
+      params:
+        healPercent: 0.25
+        range: 3.0
+        particles: true
+        sound: "ENTITY_PLAYER_HURT"
+
+  skeleton:
+    displayName: "&fSkeleton Head"
+    hdb_id: "HDB_SKELETON"
+    category: "hostile"
+    ability:
+      type: "arrow_spread"
+      params:
+        count: 5
+        angle: 30
+        velocity: 2.0
+        gravity: false
+        particles: true
+
+  creeper:
+    displayName: "&aCreeper Head"
+    hdb_id: "HDB_CREEPER"
+    category: "hostile"
+    ability:
+      type: "self_explode"
+      params:
+        radius: 3.0
+        blockDamage: false
+        damage: 6.0
+        knockback: 2.0
+
+  spider:
+    displayName: "&8Spider Head"
+    hdb_id: "HDB_SPIDER"
+    category: "hostile"
+    ability:
+      type: "web_lunge"
+      params:
+        distance: 6.0
+        slowDuration: 6
+        slowAmplifier: 2
+        webDuration: 8
+
+  cave_spider:
+    displayName: "&2Cave Spider Head"
+    hdb_id: "HDB_CAVESPIDER"
+    category: "hostile"
+    ability:
+      type: "poison_cloud"
+      params:
+        radius: 4.0
+        duration: 6
+        poisonAmplifier: 1
+        particles: "SPELL_WITCH"
+
+  slime:
+    displayName: "&aSlime Head"
+    hdb_id: "HDB_SLIME"
+    category: "hostile"
+    ability:
+      type: "spawn_slimes"
+      params:
+        count: 3
+        lifetime: 12
+        size: 1
+        health: 4.0
+
+  magma_cube:
+    displayName: "&cMagma Cube Head"
+    hdb_id: "HDB_MAGMACUBE"
+    category: "hostile"
+    ability:
+      type: "lava_slam"
+      params:
+        radius: 4.0
+        ignite: true
+        damage: 4.0
+        igniteDuration: 4
+
+  ghast:
+    displayName: "&9Ghast Head"
+    hdb_id: "HDB_GHAST"
+    category: "hostile"
+    ability:
+      type: "fireball_large"
+      params:
+        explode: true
+        blockDamage: false
+        yield: 2.0
+        velocity: 1.5
+
+  blaze:
+    displayName: "&6Blaze Head"
+    hdb_id: "HDB_BLAZE"
+    category: "hostile"
+    ability:
+      type: "fireball_triple"
+      params:
+        count: 3
+        spread: 12.0
+        velocity: 1.0
+        ignite: true
+
+  witch:
+    displayName: "&5Witch Head"
+    hdb_id: "HDB_WITCH"
+    category: "hostile"
+    ability:
+      type: "potion_toss"
+      params:
+        random: true
+        velocity: 1.2
+        splash: true
+        effects: ["POISON", "SLOWNESS", "WEAKNESS"]
+
+  zombie_villager:
+    displayName: "&7Zombie Villager Head"
+    hdb_id: "HDB_ZOMBIEVILLAGER"
+    category: "hostile"
+    ability:
+      type: "plague_summon"
+      params:
+        count: 2
+        lifetime: 20
+        health: 8.0
+        speed: 0.25
+
+  husk:
+    displayName: "&6Husk Head"
+    hdb_id: "HDB_HUSK"
+    category: "hostile"
+    ability:
+      type: "desert_blight"
+      params:
+        arc: 90.0
+        range: 5.0
+        hungerDuration: 8
+        slownessDuration: 6
+
+  stray:
+    displayName: "&bStray Head"
+    hdb_id: "HDB_STRAY"
+    category: "hostile"
+    ability:
+      type: "frost_shot"
+      params:
+        slownessDuration: 5
+        slownessAmplifier: 2
+        icePatchDuration: 10
+        range: 20.0
+
+  drowned:
+    displayName: "&3Drowned Head"
+    hdb_id: "HDB_DROWNED"
+    category: "hostile"
+    ability:
+      type: "trident_throw"
+      params:
+        pierce: true
+        velocity: 2.0
+        stunDuration: 2
+        damage: 6.0
+
+  phantom:
+    displayName: "&8Phantom Head"
+    hdb_id: "HDB_PHANTOM"
+    category: "hostile"
+    ability:
+      type: "glide_dive"
+      params:
+        duration: 6
+        damageMultiplier: 2.0
+        glideSpeed: 0.5
+        diveSpeed: 1.5
+
+  silverfish:
+    displayName: "&7Silverfish Head"
+    hdb_id: "HDB_SILVERFISH"
+    category: "hostile"
+    ability:
+      type: "infestation"
+      params:
+        count: 6
+        lifetime: 10
+        hideInBlocks: true
+        harassDuration: 8
+
+  endermite:
+    displayName: "&7Endermite Head"
+    hdb_id: "HDB_ENDERMITE"
+    category: "hostile"
+    ability:
+      type: "blink_swarm"
+      params:
+        count: 4
+        teleportRadius: 3.0
+        lifetime: 8
+        harassDamage: 2.0
+
+  vex:
+    displayName: "&8Vex Head"
+    hdb_id: "HDB_VEX"
+    category: "hostile"
+    ability:
+      type: "phase_strike"
+      params:
+        duration: 5
+        damage: 8.0
+        phaseDistance: 4.0
+        unblockable: true
+
+  evoker:
+    displayName: "&dEvoker Head"
+    hdb_id: "HDB_EVOKER"
+    category: "hostile"
+    ability:
+      type: "fang_line"
+      params:
+        length: 6
+        spacing: 1.5
+        damage: 6.0
+        delay: 0.2
+
+  pillager:
+    displayName: "&6Pillager Head"
+    hdb_id: "HDB_PILLAGER"
+    category: "hostile"
+    ability:
+      type: "crossbow_burst"
+      params:
+        count: 3
+        velocity: 2.5
+        knockback: 1.5
+        spread: 5.0
+
+  vindicator:
+    displayName: "&4Vindicator Head"
+    hdb_id: "HDB_VINDICATOR"
+    category: "hostile"
+    ability:
+      type: "axe_charge"
+      params:
+        stun: 2
+        damage: 10.0
+        chargeDistance: 4.0
+        knockback: 2.0
+
+  ravager:
+    displayName: "&8Ravager Head"
+    hdb_id: "HDB_RAVAGER"
+    category: "hostile"
+    ability:
+      type: "colossus_charge"
+      params:
+        distance: 12.0
+        knockback: 4.0
+        damage: 8.0
+        trample: true
+
+  illusioner:
+    displayName: "&5Illusioner Head"
+    hdb_id: "HDB_ILLUSIONER"
+    category: "hostile"
+    ability:
+      type: "mirror_copy"
+      params:
+        count: 2
+        lifetime: 12
+        mimicActions: true
+        distraction: true
+
+  # Aquatic Mobs
+  guardian:
+    displayName: "&2Guardian Head"
+    hdb_id: "HDB_GUARDIAN"
+    category: "aquatic"
+    ability:
+      type: "laser_beam"
+      params:
+        range: 20.0
+        damage: 6.0
+        slowAmplifier: 2
+        pierce: true
+
+  elder_guardian:
+    displayName: "&4Elder Guardian Head"
+    hdb_id: "HDB_ELDER_GUARDIAN"
+    category: "aquatic"
+    ability:
+      type: "elder_crush"
+      params:
+        miningFatigue: 2
+        radius: 8.0
+        levitationDuration: 3
+        fatigueDuration: 30
+
+  dolphin:
+    displayName: "&bDolphin Head"
+    hdb_id: "HDB_DOLPHIN"
+    category: "aquatic"
+    ability:
+      type: "riptide_surge"
+      params:
+        pushForce: 4.0
+        swimBoost: 2.0
+        radius: 6.0
+        duration: 8
+
+  axolotl:
+    displayName: "&aAxolotl Head"
+    hdb_id: "HDB_AXOLOTL"
+    category: "aquatic"
+    ability:
+      type: "regrowth"
+      params:
+        healPerSecond: 1.0
+        waterOnly: true
+        combatHealing: true
+        regenerationAmplifier: 1
+
+  glow_squid:
+    displayName: "&5Glow Squid Head"
+    hdb_id: "HDB_GLOWSQUID"
+    category: "aquatic"
+    ability:
+      type: "luminous_pulse"
+      params:
+        duration: 6
+        blindnessDuration: 4
+        glowRadius: 8.0
+        darkAreaOnly: true
+
+  # Nether & Piglin Family
+  piglin:
+    displayName: "&cPiglin Head"
+    hdb_id: "HDB_PIGLIN"
+    category: "nether"
+    ability:
+      type: "barter_burst"
+      params:
+        goldAmount: 3
+        itemTypes: ["GOLD_NUGGET", "GOLD_INGOT"]
+        radius: 3.0
+        temporary: true
+
+  piglin_brute:
+    displayName: "&4Piglin Brute Head"
+    hdb_id: "HDB_PIGLIN_BRUTE"
+    category: "nether"
+    ability:
+      type: "brute_slam"
+      params:
+        knockback: 6.0
+        stunDuration: 2
+        damage: 12.0
+        groundSlam: true
+
+  zombified_piglin:
+    displayName: "&7Zombified Piglin Head"
+    hdb_id: "HDB_ZOMBIFIED_PIGLIN"
+    category: "nether"
+    ability:
+      type: "call_reinforcements"
+      params:
+        count: 2
+        lifetime: 20
+        aggressive: true
+        health: 10.0
+
+  hoglin:
+    displayName: "&cHoglin Head"
+    hdb_id: "HDB_HOGLIN"
+    category: "nether"
+    ability:
+      type: "gore_rush"
+      params:
+        damage: 8.0
+        chargeDistance: 6.0
+        knockback: 3.0
+        bleedDuration: 4
+
+  zoglin:
+    displayName: "&8Zoglin Head"
+    hdb_id: "HDB_ZOGLIN"
+    category: "nether"
+    ability:
+      type: "berserk"
+      params:
+        attackSpeed: 1.5
+        damageBoost: 1.3
+        duration: 10
+        selfDamage: false
+
+  strider:
+    displayName: "&1Strider Head"
+    hdb_id: "HDB_STRIDER"
+    category: "nether"
+    ability:
+      type: "lava_stride"
+      params:
+        duration: 20
+        trailDuration: 8
+        fireResistance: true
+        walkOnLava: true
+
+  # End Mobs
+  enderman:
+    displayName: "&5Enderman Head"
+    hdb_id: "HDB_ENDERMAN"
+    category: "end"
+    ability:
+      type: "teleport_step"
+      params:
+        distance: 12.0
+        particles: "PORTAL"
+        sound: "ENTITY_ENDERMAN_TELEPORT"
+        throughWalls: false
+
+  shulker:
+    displayName: "&eShulker Head"
+    hdb_id: "HDB_SHULKER"
+    category: "end"
+    ability:
+      type: "levitate_shot"
+      params:
+        duration: 4
+        levitationAmplifier: 1
+        projectileSpeed: 1.0
+        tracking: true
+
+  # Passive/Utility Mobs
+  cow:
+    displayName: "&aCow Head"
+    hdb_id: "HDB_COW"
+    category: "passive"
+    ability:
+      type: "milk_burst"
+      params:
+        heal: 6.0
+        radius: 5.0
+        clearEffects: true
+        alliesOnly: true
+
+  sheep:
+    displayName: "&dSheep Head"
+    hdb_id: "HDB_SHEEP"
+    category: "passive"
+    ability:
+      type: "wool_shield"
+      params:
+        duration: 8
+        height: 3
+        width: 5
+        blockProjectiles: true
+
+  pig:
+    displayName: "&cPig Head"
+    hdb_id: "HDB_PIG"
+    category: "passive"
+    ability:
+      type: "sprint_boost"
+      params:
+        speedAmp: 0.3
+        permanent: true
+        whileWorn: true
+        particles: false
+
+  chicken:
+    displayName: "&fChicken Head"
+    hdb_id: "HDB_CHICKEN"
+    category: "passive"
+    ability:
+      type: "feather_float"
+      params:
+        doubleJump: true
+        slowFall: true
+        jumpHeight: 1.5
+        featherParticles: true
+
+  rabbit:
+    displayName: "&eRabbit Head"
+    hdb_id: "HDB_RABBIT"
+    category: "passive"
+    ability:
+      type: "spring_leap"
+      params:
+        distance: 10.0
+        height: 3.0
+        noFallDamage: true
+        particles: true
+
+  horse:
+    displayName: "&6Horse Head"
+    hdb_id: "HDB_HORSE"
+    category: "passive"
+    ability:
+      type: "fast_mount"
+      params:
+        duration: 30
+        speed: 2.0
+        jumpStrength: 1.5
+        health: 20.0
+
+  donkey:
+    displayName: "&6Donkey Head"
+    hdb_id: "HDB_DONKEY"
+    category: "passive"
+    ability:
+      type: "portable_chest"
+      params:
+        size: 27
+        duration: 60
+        persistent: false
+        location: "feet"
+
+  wolf:
+    displayName: "&8Wolf Head"
+    hdb_id: "HDB_WOLF"
+    category: "passive"
+    ability:
+      type: "alpha_call"
+      params:
+        count: 2
+        lifetime: 30
+        health: 12.0
+        loyal: true
+
+  cat:
+    displayName: "&fCat Head"
+    hdb_id: "HDB_CAT"
+    category: "passive"
+    ability:
+      type: "stealth_toggle"
+      params:
+        duration: 8
+        invisibility: true
+        mobIgnore: true
+        detectionRange: 2.0
+
+  parrot:
+    displayName: "&aParrot Head"
+    hdb_id: "HDB_PARROT"
+    category: "passive"
+    ability:
+      type: "decoy_flock"
+      params:
+        count: 3
+        lifetime: 15
+        mimicSounds: true
+        distraction: true
+
+  turtle:
+    displayName: "&bTurtle Head"
+    hdb_id: "HDB_TURTLE"
+    category: "passive"
+    ability:
+      type: "shell_guard"
+      params:
+        absorb: 4.0
+        slownessCancel: true
+        duration: 12
+        resistance: 1
+
+  panda:
+    displayName: "&7Panda Head"
+    hdb_id: "HDB_PANDA"
+    category: "passive"
+    ability:
+      type: "brawler_stance"
+      params:
+        counterChance: 0.2
+        damageReduction: 0.3
+        counterDamage: 1.5
+        duration: 10
+
+  fox:
+    displayName: "&eFox Head"
+    hdb_id: "HDB_FOX"
+    category: "passive"
+    ability:
+      type: "dash_backstab"
+      params:
+        dashDistance: 4.0
+        damageMultiplier: 2.0
+        stealthDuration: 2
+        critChance: 0.8
+
+  # Golems & Constructed
+  snow_golem:
+    displayName: "&bSnow Golem Head"
+    hdb_id: "HDB_SNOW_GOLEM"
+    category: "constructed"
+    ability:
+      type: "frost_barrage"
+      params:
+        count: 20
+        spread: 45.0
+        slowEffect: true
+        knockback: 1.0
+
+  iron_golem:
+    displayName: "&7Iron Golem Head"
+    hdb_id: "HDB_IRON_GOLEM"
+    category: "constructed"
+    ability:
+      type: "colossus_slam"
+      params:
+        launchHeight: 10.0
+        damage: 15.0
+        radius: 6.0
+        knockback: 5.0
+
+  # Special Utility
+  allay:
+    displayName: "&bAllay Head"
+    hdb_id: "HDB_ALLAY"
+    category: "utility"
+    ability:
+      type: "item_grab"
+      params:
+        radius: 8.0
+        itemTypes: "matching"
+        duration: 30
+        autoSort: true
+
+  bee:
+    displayName: "&eBee Head"
+    hdb_id: "HDB_BEE"
+    category: "utility"
+    ability:
+      type: "sting_swarm"
+      params:
+        count: 8
+        poisonDuration: 6
+        lifetime: 10
+        angerRadius: 4.0
+
+  goat:
+    displayName: "&fGoat Head"
+    hdb_id: "HDB_GOAT"
+    category: "utility"
+    ability:
+      type: "ramming_horn"
+      params:
+        chargeDistance: 8.0
+        knockback: 6.0
+        damage: 10.0
+        stunDuration: 3
+
+  llama:
+    displayName: "&6Llama Head"
+    hdb_id: "HDB_LLAMA"
+    category: "utility"
+    ability:
+      type: "spit_volley"
+      params:
+        count: 5
+        spread: 20.0
+        slowEffect: true
+        range: 15.0
+
+  camel:
+    displayName: "&6Camel Head"
+    hdb_id: "HDB_CAMEL"
+    category: "utility"
+    ability:
+      type: "saddle_rush"
+      params:
+        speed: 2.5
+        duration: 15
+        dashCooldown: 3
+        jumpBoost: true
+
+  frog:
+    displayName: "&aFrog Head"
+    hdb_id: "HDB_FROG"
+    category: "utility"
+    ability:
+      type: "tongue_pull"
+      params:
+        range: 8.0
+        pullForce: 2.0
+        damage: 4.0
+        stickiness: 2
+
+  # Boss Heads (Triple Abilities)
+  ender_dragon:
+    displayName: "&5&lEnder Dragon Head"
+    hdb_id: "HDB_ENDERDRAGON"
+    category: "boss"
+    bossAbilities:
+      - trigger: "left_click"
+        type: "wing_gust"
+        params:
+          knockback: 8.0
+          radius: 6.0
+          damage: 6.0
+          cone: true
+      - trigger: "shift_left_click"
+        type: "dragon_breath"
+        params:
+          duration: 6
+          radius: 4.0
+          damage: 3.0
+          lingering: true
+      - trigger: "right_click"
+        type: "sky_strike"
+        params:
+          stunDuration: 3
+          leapHeight: 8.0
+          damage: 12.0
+          aoe: 3.0
+
+  wither:
+    displayName: "&0&lWither Head"
+    hdb_id: "HDB_WITHER"
+    category: "boss"
+    bossAbilities:
+      - trigger: "left_click"
+        type: "skull_barrage"
+        params:
+          count: 10
+          spread: 30.0
+          damage: 8.0
+          withering: true
+      - trigger: "shift_left_click"
+        type: "decay_field"
+        params:
+          radius: 12.0
+          witherDuration: 10
+          damage: 2.0
+          tickRate: 20
+      - trigger: "right_click"
+        type: "shield_phase"
+        params:
+          duration: 4
+          invulnerability: true
+          knockbackImmune: true
+          particles: "SPELL_WITCH"
+
+  warden:
+    displayName: "&0&lWarden Head"
+    hdb_id: "HDB_WARDEN"
+    category: "boss"
+    bossAbilities:
+      - trigger: "left_click"
+        type: "sonic_boom"
+        params:
+          damage: 8.0
+          radius: 10.0
+          blindnessDuration: 4
+          piercing: true
+      - trigger: "shift_left_click"
+        type: "seismic_slam"
+        params:
+          knockback: 6.0
+          radius: 8.0
+          tremor: true
+          damage: 6.0
+      - trigger: "right_click"
+        type: "echo_locator"
+        params:
+          revealDuration: 8
+          slowAmplifier: 2
+          range: 20.0
+          glowEffect: true

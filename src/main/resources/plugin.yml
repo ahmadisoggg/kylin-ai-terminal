@@ -1,0 +1,96 @@
+name: HeadStealX
+version: ${version}
+description: ${description}
+author: HeadStealX Team
+website: https://headstealx.com
+main: com.headstealx.Main
+
+api-version: 1.13
+folia-supported: true
+
+depend: []
+softdepend: [HeadDatabase, Vault, PlaceholderAPI, MythicMobs, DiscordSRV]
+
+commands:
+  xsteal:
+    description: HeadStealX main command
+    usage: /<command> <subcommand> [args...]
+    aliases: [headsteal, hsx]
+    permission: headsteal.use
+    permission-message: "&cYou don't have permission to use HeadStealX commands!"
+
+permissions:
+  headsteal.*:
+    description: All HeadStealX permissions
+    children:
+      headsteal.use: true
+      headsteal.admin.*: true
+      headsteal.ability.*: true
+  
+  headsteal.use:
+    description: Basic HeadStealX usage
+    default: true
+  
+  headsteal.admin.*:
+    description: All admin permissions
+    children:
+      headsteal.admin.give: true
+      headsteal.admin.revive: true
+      headsteal.admin.banbox: true
+      headsteal.admin.reload: true
+      headsteal.admin.debug: true
+      headsteal.admin.bypass: true
+  
+  headsteal.admin.give:
+    description: Give heads to players
+    default: op
+  
+  headsteal.admin.revive:
+    description: Revive banned players
+    default: op
+  
+  headsteal.admin.banbox:
+    description: Manage banbox system
+    default: op
+  
+  headsteal.admin.reload:
+    description: Reload plugin configuration
+    default: op
+  
+  headsteal.admin.debug:
+    description: Access debug information
+    default: op
+  
+  headsteal.admin.bypass:
+    description: Bypass ability restrictions
+    default: op
+  
+  headsteal.ability.*:
+    description: All ability permissions
+    children:
+      headsteal.ability.use: true
+      headsteal.ability.boss: true
+  
+  headsteal.ability.use:
+    description: Use head abilities
+    default: true
+  
+  headsteal.ability.boss:
+    description: Use boss head abilities
+    default: true
+  
+  headsteal.fuse:
+    description: Fuse heads together
+    default: true
+  
+  headsteal.clone:
+    description: Clone player heads
+    default: op
+  
+  headsteal.drop:
+    description: Drop heads on death
+    default: true
+  
+  headsteal.revive:
+    description: Revive other players
+    default: true

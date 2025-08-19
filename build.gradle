@@ -1,0 +1,138 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'maven-publish'
+}
+
+group = 'com.headstealx'
+version = '1.0.0'
+description = 'HeadStealX - Premium Minecraft Plugin for Paper 1.8-1.21.8'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc-repo'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        name = 'jitpack'
+        url = 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    // Paper API (1.13+ compatible)
+    compileOnly 'io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT'
+    
+    // Legacy Spigot for 1.8-1.12 support
+    compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
+    
+    // Libby for runtime dependency management
+    implementation 'net.byteflux:libby-bukkit:1.3.0'
+    
+    // HeadDatabase API (will be loaded at runtime via Libby)
+    compileOnly 'com.github.shynixn.headdatabase:hdb-api:1.0'
+    
+    // Testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testImplementation 'org.mockito:mockito-core:4.11.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.11.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    relocate 'net.byteflux.libby', 'com.headstealx.libs.libby'
+    
+    minimize {
+        exclude(dependency('net.byteflux:libby-bukkit:.*'))
+    }
+    
+    manifest {
+        attributes(
+            'Main-Class': 'com.headstealx.Main',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Built-By': System.getProperty('user.name'),
+            'Build-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ"),
+            'Created-By': "Gradle ${gradle.gradleVersion}",
+            'Build-Jdk': "${System.getProperty('java.version')} (${System.getProperty('java.vendor')} ${System.getProperty('java.vm.version')})"
+        )
+    }
+}
+
+// Obfuscation task (using ProGuard)
+task obfuscate(type: JavaExec, dependsOn: shadowJar) {
+    group = 'build'
+    description = 'Obfuscates the plugin JAR'
+    
+    classpath = configurations.runtimeClasspath
+    mainClass = 'proguard.ProGuard'
+    
+    args = [
+        '@obfuscator/proguard.conf',
+        '-injars', shadowJar.archiveFile.get().asFile.absolutePath,
+        '-outjars', "${buildDir}/libs/${project.name}-${project.version}-obfuscated.jar"
+    ]
+    
+    doFirst {
+        println "Starting obfuscation process..."
+    }
+    
+    doLast {
+        println "Obfuscation completed: ${buildDir}/libs/${project.name}-${project.version}-obfuscated.jar"
+    }
+}
+
+// Anti-tamper signature generation
+task generateSignature(dependsOn: obfuscate) {
+    group = 'build'
+    description = 'Generates anti-tamper signature'
+    
+    doLast {
+        def jarFile = file("${buildDir}/libs/${project.name}-${project.version}-obfuscated.jar")
+        if (jarFile.exists()) {
+            def hash = java.security.MessageDigest.getInstance("SHA-256")
+                .digest(jarFile.bytes)
+                .encodeHex()
+                .toString()
+            
+            def sigFile = file("src/main/resources/embedded.sig")
+            sigFile.parentFile.mkdirs()
+            sigFile.text = hash
+            
+            println "Generated signature: $hash"
+        }
+    }
+}
+
+build.dependsOn shadowJar
+
+// Version compatibility handling
+compileJava {
+    options.compilerArgs += ['-Xlint:deprecation', '-Xlint:unchecked']
+    options.encoding = 'UTF-8'
+}
+
+processResources {
+    filteringCharset = 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand(
+            'version': project.version,
+            'description': project.description
+        )
+    }
+}
